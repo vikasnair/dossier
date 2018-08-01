@@ -1,24 +1,787 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" systemVersion="17A277" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="LmE-Sw-9AW">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
+        <!--Consenso all’utilizzo dei dati-->
+        <scene sceneID="CDm-CL-DOU">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                <viewController storyboardIdentifier="ToSViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="2VZ-Fe-jHr" customClass="ToSViewController" customModule="News_App" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="piv-F0-gQK">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1Hr-r7-eMb">
+                                <rect key="frame" x="16" y="64" width="343" height="583"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <attributedString key="attributedText">
+                                    <fragment>
+                                        <string key="content" base64-UTF8="YES">
+Cg
+</string>
+                                        <attributes>
+                                            <font key="NSFont" size="10" name="Times-Bold"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" tailIndent="468" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
+                                                <tabStops/>
+                                            </paragraphStyle>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment>
+                                        <string key="content"> 
+ New York University
+</string>
+                                        <attributes>
+                                            <font key="NSFont" size="10" name="Times-Bold"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" tailIndent="504" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
+                                                <tabStops/>
+                                            </paragraphStyle>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content="A private university in the public service">
+                                        <attributes>
+                                            <font key="NSFont" size="10" name="Times-Italic"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" tailIndent="504" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
+                                                <tabStops/>
+                                            </paragraphStyle>
+                                            <integer key="NSUnderline" value="1"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment>
+                                        <string key="content" base64-UTF8="YES">
+Cg
+</string>
+                                        <attributes>
+                                            <font key="NSFont" size="10" name="Times-Bold"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" tailIndent="504" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
+                                                <tabStops/>
+                                            </paragraphStyle>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment>
+                                        <string key="content">
+
+The Wilf Family Department of Politics
+19 West 4</string>
+                                        <attributes>
+                                            <font key="NSFont" size="10" name="Times-Bold"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" tailIndent="504" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
+                                                <tabStops>
+                                                    <textTab alignment="center" location="252">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="right" location="504">
+                                                        <options/>
+                                                    </textTab>
+                                                </tabStops>
+                                            </paragraphStyle>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content="th">
+                                        <attributes>
+                                            <font key="NSFont" size="10" name="Times-Bold"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" tailIndent="504" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
+                                                <tabStops>
+                                                    <textTab alignment="center" location="252">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="right" location="504">
+                                                        <options/>
+                                                    </textTab>
+                                                </tabStops>
+                                            </paragraphStyle>
+                                            <integer key="NSSuperScript" value="1"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content=" Street, 2">
+                                        <attributes>
+                                            <font key="NSFont" size="10" name="Times-Bold"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" tailIndent="504" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
+                                                <tabStops>
+                                                    <textTab alignment="center" location="252">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="right" location="504">
+                                                        <options/>
+                                                    </textTab>
+                                                </tabStops>
+                                            </paragraphStyle>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content="nd">
+                                        <attributes>
+                                            <font key="NSFont" size="10" name="Times-Bold"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" tailIndent="504" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
+                                                <tabStops>
+                                                    <textTab alignment="center" location="252">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="right" location="504">
+                                                        <options/>
+                                                    </textTab>
+                                                </tabStops>
+                                            </paragraphStyle>
+                                            <integer key="NSSuperScript" value="1"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment>
+                                        <string key="content"> Floor
+New York, NY 10012-1119
+Telephone:   212-998-8500
+Fax:               212-995-4184
+</string>
+                                        <attributes>
+                                            <font key="NSFont" size="10" name="Times-Bold"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" tailIndent="504" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
+                                                <tabStops>
+                                                    <textTab alignment="center" location="252">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="right" location="504">
+                                                        <options/>
+                                                    </textTab>
+                                                </tabStops>
+                                            </paragraphStyle>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment>
+                                        <string key="content" base64-UTF8="YES">
+Cg
+</string>
+                                        <attributes>
+                                            <font key="NSFont" size="11" name="TimesNewRomanPSMT"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" paragraphSpacing="8" tailIndent="468" lineHeightMultiple="1.0791666666666666" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
+                                                <tabStops/>
+                                            </paragraphStyle>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment>
+                                        <string key="content">Modulo di consenso per IRB-FY2018-2034
+</string>
+                                        <attributes>
+                                            <font key="NSFont" size="10" name="Times-Bold"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" paragraphSpacing="8" tailIndent="468" lineHeightMultiple="1.0791666666666666" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
+                                                <tabStops/>
+                                            </paragraphStyle>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment>
+                                        <mutableString key="content">Sei stato invitato a partecipare a uno studio di ricerca per saperne di più sulle abitudini individuali di consumo delle notizie e su come le persone imparano dalle notizie. Questo studio sarà condotto da Alessandro Vecchiato, FAS - Politics, Arts &amp; Science, New York University, come parte della sua tesi di dottorato. Lo sponsor della sua facoltà è il professor Cyrus Samii, dipartimento di FAS - Politics, Arts &amp; Science, New York University.
+Se accetti di partecipare a questo studio, ti verrà chiesto di fare quanto segue:
+• Scaricare il dossier dell'app dall'App Store
+• Completare un questionario sul tuo background (età, sesso, istruzione, ecc.).
+• Utilizzare l'app ogni giorno, se possibile, per controllare le notizie.
+• Completare un questionario sulle tue preferenze per le notizie alla fine del periodo di indagine.
+La partecipazione a questo studio richiederà circa 10 minuti per completare il questionario, mentre lo studio in se’ durerà 30 giorni. Non ci sono rischi noti associati alla tua partecipazione a questa ricerca oltre a quelli della vita di tutti i giorni.
+Anche se non riceverete benefici diretti, questa ricerca può aiutare il ricercatore a capire le abitudini personali nel consumo di notizie e in che modo le persone imparano dalle notizie, come quotidianamente cercano informazioni e cosa imparano da ciò che leggono.
+La riservatezza dei dati di ricerca verrà rigorosamente mantenuta assegnando a ciascun partecipante un ID utente, in modo che non possiamo ricordare direttamente l'identità individuale del soggetto. I dati verranno archiviati nel database di Google Firebase implementato con l'app, accessibile solo al ricercatore. Le tue informazioni ottenute tramite questo studio non saranno utilizzate per ricerche future.
+La partecipazione a questo studio è volontaria. Puoi rifiutarti di partecipare o ritirarti in qualsiasi momento senza penalità. Per interviste, questionari o sondaggi, hai il diritto di saltare o di non rispondere alle domande a cui preferisci non rispondere.
+Se c'è qualcosa sullo studio o sulla tua partecipazione che non è chiara o che non capisci, o se hai domande o vuoi segnalare un problema relativo alla ricerca, puoi contattare Alessandro Vecchiato al numero +1 (310) 962 4428, av990@nyu.edu, New York University, o lo sponsor della facoltà, Cyrus Sammii presso cdsamii@gmail.com, New York University.
+Per domande sui tuoi diritti come partecipante alla ricerca, puoi contattare il Comitato universitario per le attività che coinvolgono soggetti umani (UCAIHS), New York University, 665 Broadway, Suite 804, New York, New York, 10012, all'indirizzo ask.humansubjects@nyu. edu o (212) 998-4808. Si prega di fare riferimento allo studio n. (RB-FY2018-2034) quando si contatta l'IRB (UCAIHS).
+Hai ricevuto una copia di questo documento di consenso da conservare.
+
+</mutableString>
+                                        <attributes>
+                                            <font key="NSFont" size="10" name="Times-Roman"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" paragraphSpacing="8" tailIndent="468" lineHeightMultiple="1.0791666666666666" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
+                                                <tabStops/>
+                                            </paragraphStyle>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment>
+                                        <string key="content">Addendum relativo al regolamento generale sulla protezione dei dati dell'Unione europea per IRB-FY2018-2034
+</string>
+                                        <attributes>
+                                            <font key="NSFont" size="10" name="Times-Bold"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" paragraphSpacing="8" tailIndent="468" lineHeightMultiple="1.0791666666666666" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
+                                                <tabStops/>
+                                            </paragraphStyle>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment>
+                                        <mutableString key="content">
+I ricercatori raccoglieranno e utilizzeranno informazioni personalmente identificabili nel corso di questa ricerca. Ciò significa che se accetti di prendere parte a questo studio di ricerca, i ricercatori raccoglieranno dati su di te nei modi necessari per condurre lo studio.
+Come indicato, il principale investigatore di questo studio Cyrus Samii, Dipartimento di Politica del GSAS, Università di New York. La New York University e il PI sono congiuntamente responsabili della conduzione di questo studio di ricerca. La New York University fungerà da controllore dei dati per questo studio ed è responsabile della cura delle informazioni e dell'utilizzo corretto. La NYU manterrà informazioni identificative su di te per un anno dopo che lo studio sarà terminato.
+Hai determinati diritti rispetto alle informazioni identificabili raccolte su di te durante questo studio. Questi diritti includono:
+</mutableString>
+                                        <attributes>
+                                            <font key="NSFont" size="10" name="Times-Roman"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" paragraphSpacing="8" tailIndent="468" lineHeightMultiple="1.0791666666666666" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
+                                                <tabStops/>
+                                            </paragraphStyle>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content="●">
+                                        <attributes>
+                                            <font key="NSFont" size="10" name="Helvetica"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" paragraphSpacing="8" tailIndent="468" lineHeightMultiple="1.0791666666666666" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
+                                                <tabStops/>
+                                            </paragraphStyle>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment>
+                                        <string key="content"> Il diritto di richiedere l'accesso alle informazioni di identificazione personale che i ricercatori hanno raccolto su di te, nonché il diritto di richiedere la rettifica di qualsiasi informazione che sia inaccurata o incompleta.
+</string>
+                                        <attributes>
+                                            <font key="NSFont" size="10" name="Times-Roman"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" paragraphSpacing="8" tailIndent="468" lineHeightMultiple="1.0791666666666666" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
+                                                <tabStops/>
+                                            </paragraphStyle>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content="●">
+                                        <attributes>
+                                            <font key="NSFont" size="10" name="Helvetica"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" paragraphSpacing="8" tailIndent="468" lineHeightMultiple="1.0791666666666666" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
+                                                <tabStops/>
+                                            </paragraphStyle>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment>
+                                        <mutableString key="content"> Il diritto di richiedere una copia delle informazioni di identificazione personale in formato elettronico affinché sia ​​possibile trasmettere i dati a terzi o richiedere che i ricercatori trasferiscano direttamente le informazioni personali identificabili a una o più terze parti.
+</mutableString>
+                                        <attributes>
+                                            <font key="NSFont" size="10" name="Times-Roman"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" paragraphSpacing="8" tailIndent="468" lineHeightMultiple="1.0791666666666666" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
+                                                <tabStops/>
+                                            </paragraphStyle>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content="●">
+                                        <attributes>
+                                            <font key="NSFont" size="10" name="Helvetica"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" paragraphSpacing="8" tailIndent="468" lineHeightMultiple="1.0791666666666666" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
+                                                <tabStops/>
+                                            </paragraphStyle>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment>
+                                        <string key="content"> Il diritto di opporti all'uso delle informazioni di identificazione personale per uno o più scopi, incluso il ritiro da questo studio, di opporsi all'uso continuato di queste informazioni ai fini della ricerca.
+</string>
+                                        <attributes>
+                                            <font key="NSFont" size="10" name="Times-Roman"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" paragraphSpacing="8" tailIndent="468" lineHeightMultiple="1.0791666666666666" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
+                                                <tabStops/>
+                                            </paragraphStyle>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content="●">
+                                        <attributes>
+                                            <font key="NSFont" size="10" name="Helvetica"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" paragraphSpacing="8" tailIndent="468" lineHeightMultiple="1.0791666666666666" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
+                                                <tabStops/>
+                                            </paragraphStyle>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment>
+                                        <mutableString key="content"> Il diritto alla cancellazione delle informazioni di identificazione personale quando non è più necessario per gli scopi per cui l'hai fornito, nonché il diritto alla limitazione del trattamento delle informazioni di identificazione personale a determinati scopi limitati laddove la cancellazione non sia possibile.
+
+Se accetti di partecipare a questo studio ma in seguito cambi idea, i ricercatori manterranno le informazioni su di te che hanno già ottenuto, a meno che tu non richieda diversamente. Dopo aver accettato di partecipare a questo studio, i tuoi diritti di accesso, cambiamento, spostamento, cancellazione o opposizione all'uso continuato di informazioni già raccolte su di te potrebbe essere limitato, in quanto i ricercatori devono gestire le tue informazioni in modi specifici affinché la ricerca sia affidabile e accurata. Per salvaguardare i tuoi diritti, i ricercatori utilizzeranno il minimo possibile di informazioni che ti identificano personalmente. 
+La base legale dei ricercatori per la raccolta e l'uso di informazioni personali identificabili su di te è il loro legittimo interesse nella raccolta di dati affidabili e accurati per l'analisi scientifica. 
+Questo studio di ricerca riguarda la raccolta e l'analisi di informazioni che rivelano opinioni politiche. Il tuo consenso esplicito è richiesto per la raccolta di queste informazioni. Accettando di partecipare a questo studio, acconsenti alla raccolta di queste informazioni. 
+New York University è un'università globale con sede negli Stati Uniti. Se accetti di partecipare a questo studio, le tue informazioni personali saranno trasmesse direttamente ai ricercatori della NYU negli Stati Uniti. Le leggi sulla protezione dei dati negli Stati Uniti potrebbero non essere così forti come le leggi in cui risiedi. Accettando di partecipare a questo studio, acconsenti alla trasmissione delle tue informazioni personali ai ricercatori della NYU negli Stati Uniti. 
+Per esercitare uno dei diritti sopra indicati, devi contattare l’Investigatore Principale contatti forniti sopra. In caso di dubbi o reclami relativi alla gestione delle informazioni personali identificabili in questo studio, è possibile contattare il responsabile della protezione dei dati della New York University, Peter Christensen, all'indirizzo gdpr-info@nyu.edu. Se non si è soddisfatti della risposta del Responsabile della protezione dei dati o se si ritiene che i ricercatori stiano utilizzando le informazioni di identificazione personale in un modo che non sia lecito, è possibile presentare reclamo all'autorità di protezione dei dati seguente: 
+Garante per la protezione dei dati personali  Piazza di Monte Citorio, 12100186 Roma Tel. +39 06 69677 1 Fax +39 06 69677 785 e-mail: </mutableString>
+                                        <attributes>
+                                            <font key="NSFont" size="10" name="Times-Roman"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" paragraphSpacing="8" tailIndent="468" lineHeightMultiple="1.0791666666666666" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
+                                                <tabStops/>
+                                            </paragraphStyle>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content="garante@garanteprivacy.it">
+                                        <attributes>
+                                            <color key="NSColor" red="0.019607843137254902" green="0.38823529411764707" blue="0.75686274509803919" alpha="1" colorSpace="calibratedRGB"/>
+                                            <font key="NSFont" size="10" name="Times-Roman"/>
+                                            <url key="NSLink" string="%22mailto"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" paragraphSpacing="8" tailIndent="468" lineHeightMultiple="1.0791666666666666" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
+                                                <tabStops/>
+                                            </paragraphStyle>
+                                            <integer key="NSUnderline" value="1"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment>
+                                        <string key="content">  Sito web: http://www.garanteprivacy.it/ 
+</string>
+                                        <attributes>
+                                            <font key="NSFont" size="10" name="Times-Roman"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" paragraphSpacing="8" tailIndent="468" lineHeightMultiple="1.0791666666666666" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
+                                                <tabStops/>
+                                            </paragraphStyle>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZgP-yn-VAX">
+                                <rect key="frame" x="0.0" y="623" width="375" height="44"/>
+                                <items>
+                                    <barButtonItem title="Non Accetto" id="Zys-uN-Vox">
+                                        <connections>
+                                            <action selector="disagree:" destination="2VZ-Fe-jHr" id="XE8-Av-LID"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem title="Accetto" id="gvF-tk-f9q">
+                                        <connections>
+                                            <action selector="agree:" destination="2VZ-Fe-jHr" id="Apk-vR-Kce"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="JSe-qZ-bEO" firstAttribute="trailing" secondItem="1Hr-r7-eMb" secondAttribute="trailing" constant="16" id="Adc-M7-GMB"/>
+                            <constraint firstItem="JSe-qZ-bEO" firstAttribute="bottom" secondItem="1Hr-r7-eMb" secondAttribute="bottom" constant="20" id="BD5-Gq-5dX"/>
+                            <constraint firstItem="1Hr-r7-eMb" firstAttribute="leading" secondItem="JSe-qZ-bEO" secondAttribute="leading" constant="16" id="Fg2-Xe-XDK"/>
+                            <constraint firstItem="1Hr-r7-eMb" firstAttribute="centerX" secondItem="JSe-qZ-bEO" secondAttribute="centerX" id="Fun-sh-Aaq"/>
+                            <constraint firstItem="1Hr-r7-eMb" firstAttribute="top" secondItem="JSe-qZ-bEO" secondAttribute="top" id="GiG-xx-bIg"/>
+                            <constraint firstItem="ZgP-yn-VAX" firstAttribute="centerX" secondItem="JSe-qZ-bEO" secondAttribute="centerX" id="Si6-4N-y5X"/>
+                            <constraint firstItem="JSe-qZ-bEO" firstAttribute="trailing" secondItem="ZgP-yn-VAX" secondAttribute="trailing" id="UES-kj-fDi"/>
+                            <constraint firstItem="JSe-qZ-bEO" firstAttribute="bottom" secondItem="ZgP-yn-VAX" secondAttribute="bottom" id="a8O-Sc-U93"/>
+                            <constraint firstItem="ZgP-yn-VAX" firstAttribute="leading" secondItem="JSe-qZ-bEO" secondAttribute="leading" id="ntS-rp-AFD"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="JSe-qZ-bEO"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Consenso all’utilizzo dei dati" id="47A-gW-o1c"/>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6OS-le-j5S" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="2312.8000000000002" y="-162.3688155922039"/>
+        </scene>
+        <!--Feed Table View Controller-->
+        <scene sceneID="NQs-fe-OJw">
+            <objects>
+                <tableViewController storyboardIdentifier="FeedTableViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="A9B-fC-DnM" customClass="FeedTableViewController" customModule="News_App" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="100" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Jei-yQ-EuQ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="separatorColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="articleCell" rowHeight="75" id="XOr-6l-o2o" customClass="ArticleTableViewCell" customModule="News_App" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="75"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="XOr-6l-o2o" id="dY4-IG-qNb">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="74.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="NPP-sk-YVY">
+                                            <rect key="frame" x="20" y="14.5" width="335" height="46.5"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="TopLeft" horizontalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mMe-V5-vJE">
+                                                    <rect key="frame" x="0.0" y="0.0" width="335" height="20.5"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
+                                                    <color key="textColor" red="0.086274509799999996" green="0.094117647060000004" blue="0.19215686269999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <stackView opaque="NO" contentMode="scaleToFill" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="pUj-6y-3GE">
+                                                    <rect key="frame" x="0.0" y="28.5" width="335" height="18"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d0I-Ss-rWk">
+                                                            <rect key="frame" x="0.0" y="0.0" width="40" height="18"/>
+                                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                                            <color key="textColor" red="0.31372549019607843" green="0.52941176470588236" blue="0.95686274509803915" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vfs-co-sK2">
+                                                            <rect key="frame" x="43" y="0.0" width="292" height="18"/>
+                                                            <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
+                                                            <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                </stackView>
+                                            </subviews>
+                                        </stackView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="trailing" secondItem="NPP-sk-YVY" secondAttribute="trailing" constant="20" id="KTj-yn-n9T"/>
+                                        <constraint firstItem="NPP-sk-YVY" firstAttribute="centerY" secondItem="dY4-IG-qNb" secondAttribute="centerY" id="Odj-E1-dLv"/>
+                                        <constraint firstItem="NPP-sk-YVY" firstAttribute="leading" secondItem="dY4-IG-qNb" secondAttribute="leading" constant="20" id="s92-DM-tD0"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="dateLabel" destination="vfs-co-sK2" id="psQ-5Y-lNK"/>
+                                    <outlet property="sourceLabel" destination="d0I-Ss-rWk" id="LmQ-Rf-5RG"/>
+                                    <outlet property="titleLabel" destination="mMe-V5-vJE" id="1VL-Il-xfi"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="A9B-fC-DnM" id="oXD-yz-MeS"/>
+                            <outlet property="delegate" destination="A9B-fC-DnM" id="w8n-iC-hNb"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="RHb-UG-nVw"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BZV-8f-34R" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3233" y="-889"/>
+        </scene>
+        <!--Auth View Controller-->
+        <scene sceneID="sUK-YM-18w">
+            <objects>
+                <viewController storyboardIdentifier="AuthViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="ylo-PJ-euB" customClass="AuthViewController" customModule="News_App" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Whn-yW-PA2">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Nt-RA-81s">
+                                <rect key="frame" x="121" y="557" width="134" height="30"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Create an account">
+                                    <color key="titleColor" red="0.086274509799999996" green="0.094117647060000004" blue="0.19215686269999999" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <segue destination="LKg-mb-hsn" kind="show" id="G8e-0m-uHY"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yng-U4-idX">
+                                <rect key="frame" x="167" y="597" width="41" height="30"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Login">
+                                    <color key="titleColor" red="0.086274509799999996" green="0.094117647060000004" blue="0.19215686269999999" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <segue destination="O1h-RY-Ksh" kind="show" id="yMA-Cc-5Pp"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dossier" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zwx-1c-ZLR">
+                                <rect key="frame" x="103.5" y="104" width="168.5" height="72"/>
+                                <fontDescription key="fontDescription" name="DINCondensed-Bold" family="DIN Condensed" pointSize="72"/>
+                                <color key="textColor" red="0.086274509803921567" green="0.094117647058823528" blue="0.19215686274509802" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Yng-U4-idX" firstAttribute="centerX" secondItem="l85-uW-Kyq" secondAttribute="centerX" id="0AN-fU-k4z"/>
+                            <constraint firstItem="zwx-1c-ZLR" firstAttribute="centerX" secondItem="l85-uW-Kyq" secondAttribute="centerX" id="96A-EJ-GB6"/>
+                            <constraint firstItem="zwx-1c-ZLR" firstAttribute="top" secondItem="l85-uW-Kyq" secondAttribute="top" constant="40" id="Ca9-IU-Ksq"/>
+                            <constraint firstItem="Yng-U4-idX" firstAttribute="top" secondItem="3Nt-RA-81s" secondAttribute="bottom" constant="10" id="MBN-dV-2IW"/>
+                            <constraint firstItem="l85-uW-Kyq" firstAttribute="bottom" secondItem="Yng-U4-idX" secondAttribute="bottom" constant="40" id="NlI-mB-ORn"/>
+                            <constraint firstItem="3Nt-RA-81s" firstAttribute="centerX" secondItem="l85-uW-Kyq" secondAttribute="centerX" id="TYb-Or-rYF"/>
+                            <constraint firstItem="zwx-1c-ZLR" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="l85-uW-Kyq" secondAttribute="leading" constant="20" id="am5-5s-XLi"/>
+                            <constraint firstItem="l85-uW-Kyq" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="zwx-1c-ZLR" secondAttribute="trailing" constant="20" id="bDY-qX-GYb"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="l85-uW-Kyq"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="dQs-jK-AoA"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="K0T-0Y-m5v" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-167" y="-889"/>
+        </scene>
+        <!--Create Account View Controller-->
+        <scene sceneID="gVt-SP-Ule">
+            <objects>
+                <viewController storyboardIdentifier="CreateAccountViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="LKg-mb-hsn" customClass="CreateAccountViewController" customModule="News_App" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="87W-rT-gUx">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Mobile" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9Gl-jh-cBU" userLabel="Phone" customClass="PhoneNumberTextField" customModule="PhoneNumberKit">
+                                <rect key="frame" x="30" y="235.5" width="305.5" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="9Z7-ZR-u1t"/>
+                                </constraints>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="next" enablesReturnKeyAutomatically="YES"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="d9c-X1-RgZ">
+                                <rect key="frame" x="30" y="165.5" width="305" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="j5I-ZJ-hDn"/>
+                                </constraints>
+                                <color key="textColor" red="0.086274509799999996" green="0.094117647060000004" blue="0.19215686269999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="next" enablesReturnKeyAutomatically="YES"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Create an account." textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Oi5-Ad-1uS">
+                                <rect key="frame" x="40" y="84" width="295" height="42"/>
+                                <fontDescription key="fontDescription" name="DINCondensed-Bold" family="DIN Condensed" pointSize="42"/>
+                                <color key="textColor" red="0.086274509799999996" green="0.094117647060000004" blue="0.19215686269999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5Fi-O4-1WT">
+                                <rect key="frame" x="30" y="235.5" width="305" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="36K-8o-COz"/>
+                                </constraints>
+                                <color key="textColor" red="0.086274509799999996" green="0.094117647060000004" blue="0.19215686269999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="next" enablesReturnKeyAutomatically="YES"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="AN9-ZN-kJM">
+                                <rect key="frame" x="30" y="305.5" width="305" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="1Cp-aq-qOn"/>
+                                </constraints>
+                                <color key="textColor" red="0.086274509799999996" green="0.094117647060000004" blue="0.19215686269999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES" secureTextEntry="YES" textContentType="password"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jGk-ha-Iz9">
+                                <rect key="frame" x="97.5" y="395.5" width="180" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="32" id="k8y-aj-kQS"/>
+                                    <constraint firstAttribute="width" constant="180" id="tl4-tW-tDR"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                <state key="normal" title="Continue with email">
+                                    <color key="titleColor" red="0.086274509799999996" green="0.094117647060000004" blue="0.19215686269999999" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="switchUI:" destination="LKg-mb-hsn" eventType="touchUpInside" id="1Sm-F4-pkx"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7ET-Az-9Uf" customClass="TransitionButton" customModule="TransitionButton">
+                                <rect key="frame" x="40" y="447.5" width="295" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="Qxs-D4-NeM"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Create account.">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="createAccount:" destination="LKg-mb-hsn" eventType="touchUpInside" id="H2H-Hg-pzC"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="AN9-ZN-kJM" firstAttribute="leading" secondItem="KkY-4G-LtE" secondAttribute="leading" constant="30" id="0r6-Qr-1aT"/>
+                            <constraint firstItem="KkY-4G-LtE" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Oi5-Ad-1uS" secondAttribute="trailing" constant="20" id="1Ob-bd-YwT"/>
+                            <constraint firstItem="5Fi-O4-1WT" firstAttribute="leading" secondItem="KkY-4G-LtE" secondAttribute="leading" constant="30" id="9Ce-gS-9WK"/>
+                            <constraint firstItem="jGk-ha-Iz9" firstAttribute="centerX" secondItem="KkY-4G-LtE" secondAttribute="centerX" id="A6O-oG-w1H"/>
+                            <constraint firstItem="d9c-X1-RgZ" firstAttribute="leading" secondItem="KkY-4G-LtE" secondAttribute="leading" constant="30" id="CIu-L1-i7T"/>
+                            <constraint firstItem="7ET-Az-9Uf" firstAttribute="leading" secondItem="KkY-4G-LtE" secondAttribute="leading" constant="40" id="DPq-dh-A4y"/>
+                            <constraint firstItem="KkY-4G-LtE" firstAttribute="trailing" secondItem="9Gl-jh-cBU" secondAttribute="trailing" constant="40" id="JeE-qe-nTM"/>
+                            <constraint firstItem="KkY-4G-LtE" firstAttribute="trailing" secondItem="AN9-ZN-kJM" secondAttribute="trailing" constant="40" id="Pwp-yt-SNh"/>
+                            <constraint firstItem="KkY-4G-LtE" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="7ET-Az-9Uf" secondAttribute="bottom" constant="20" id="R47-bf-05K"/>
+                            <constraint firstItem="9Gl-jh-cBU" firstAttribute="leading" secondItem="KkY-4G-LtE" secondAttribute="leading" constant="30" id="TsD-TV-h9a"/>
+                            <constraint firstItem="7ET-Az-9Uf" firstAttribute="centerX" secondItem="KkY-4G-LtE" secondAttribute="centerX" id="WaP-ha-XNR"/>
+                            <constraint firstItem="7ET-Az-9Uf" firstAttribute="top" secondItem="jGk-ha-Iz9" secondAttribute="bottom" constant="20" id="X6B-rX-J5j"/>
+                            <constraint firstItem="KkY-4G-LtE" firstAttribute="trailing" secondItem="5Fi-O4-1WT" secondAttribute="trailing" constant="40" id="XkA-bg-yJ5"/>
+                            <constraint firstItem="AN9-ZN-kJM" firstAttribute="top" secondItem="5Fi-O4-1WT" secondAttribute="bottom" constant="20" id="bjm-lc-WsX"/>
+                            <constraint firstItem="Oi5-Ad-1uS" firstAttribute="centerX" secondItem="KkY-4G-LtE" secondAttribute="centerX" id="dc1-Y3-tOD"/>
+                            <constraint firstItem="Oi5-Ad-1uS" firstAttribute="top" secondItem="KkY-4G-LtE" secondAttribute="top" constant="20" id="fdj-bv-Mvw"/>
+                            <constraint firstItem="jGk-ha-Iz9" firstAttribute="top" secondItem="AN9-ZN-kJM" secondAttribute="bottom" constant="40" id="fxG-GK-J19"/>
+                            <constraint firstItem="AN9-ZN-kJM" firstAttribute="top" secondItem="9Gl-jh-cBU" secondAttribute="bottom" constant="20" id="ljk-cN-Kqr"/>
+                            <constraint firstItem="KkY-4G-LtE" firstAttribute="trailing" secondItem="d9c-X1-RgZ" secondAttribute="trailing" constant="40" id="r3p-BL-BzK"/>
+                            <constraint firstItem="Oi5-Ad-1uS" firstAttribute="leading" secondItem="KkY-4G-LtE" secondAttribute="leading" constant="40" id="reU-Xg-H0X"/>
+                            <constraint firstItem="9Gl-jh-cBU" firstAttribute="top" secondItem="d9c-X1-RgZ" secondAttribute="bottom" constant="20" id="s0u-7M-OzG"/>
+                            <constraint firstItem="d9c-X1-RgZ" firstAttribute="top" secondItem="Oi5-Ad-1uS" secondAttribute="bottom" constant="40" id="y9K-ja-afg"/>
+                            <constraint firstItem="KkY-4G-LtE" firstAttribute="trailing" secondItem="7ET-Az-9Uf" secondAttribute="trailing" constant="40" id="zT6-de-0y7"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="KkY-4G-LtE"/>
+                    </view>
+                    <connections>
+                        <outlet property="createAccountButton" destination="7ET-Az-9Uf" id="uuz-JU-DxD"/>
+                        <outlet property="emailField" destination="5Fi-O4-1WT" id="vcC-Gj-UZG"/>
+                        <outlet property="nameField" destination="d9c-X1-RgZ" id="78f-1L-gma"/>
+                        <outlet property="passwordField" destination="AN9-ZN-kJM" id="BH9-HP-05y"/>
+                        <outlet property="phoneField" destination="9Gl-jh-cBU" id="OEK-Yn-taU"/>
+                        <outlet property="switchButton" destination="jGk-ha-Iz9" id="Ebw-8M-ofL"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Yb9-w6-fQH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="580" y="-889"/>
+        </scene>
+        <!--Login View Controller-->
+        <scene sceneID="6Wy-j4-s8a">
+            <objects>
+                <viewController storyboardIdentifier="LoginViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="O1h-RY-Ksh" customClass="LoginViewController" customModule="News_App" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="w9d-UD-oSB">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Mobile" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cmV-yk-z0B" userLabel="Phone" customClass="PhoneNumberTextField" customModule="PhoneNumberKit">
+                                <rect key="frame" x="30" y="166" width="305" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="aEB-7v-mJj"/>
+                                </constraints>
+                                <color key="textColor" red="0.086274509799999996" green="0.094117647060000004" blue="0.19215686269999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="next" enablesReturnKeyAutomatically="YES"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Login." textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yjs-cS-cBo">
+                                <rect key="frame" x="40" y="84" width="295" height="42"/>
+                                <fontDescription key="fontDescription" name="DINCondensed-Bold" family="DIN Condensed" pointSize="42"/>
+                                <color key="textColor" red="0.086274509799999996" green="0.094117647060000004" blue="0.19215686269999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FRG-Ga-uem">
+                                <rect key="frame" x="30" y="166" width="305" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="Uh0-Pb-4cc"/>
+                                </constraints>
+                                <color key="textColor" red="0.086274509799999996" green="0.094117647060000004" blue="0.19215686269999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="next" enablesReturnKeyAutomatically="YES"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DRT-nx-NMW">
+                                <rect key="frame" x="30" y="236" width="305" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="hyl-RI-HVM"/>
+                                </constraints>
+                                <color key="textColor" red="0.086274509799999996" green="0.094117647060000004" blue="0.19215686269999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES" secureTextEntry="YES" textContentType="password"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WZy-1f-abW">
+                                <rect key="frame" x="97.5" y="326" width="180" height="33"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="33" id="hZq-yQ-o94"/>
+                                    <constraint firstAttribute="width" constant="180" id="kof-7c-Jb0"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <state key="normal" title="Continue with email">
+                                    <color key="titleColor" red="0.086274509799999996" green="0.094117647060000004" blue="0.19215686269999999" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="switchUI:" destination="LKg-mb-hsn" eventType="touchUpInside" id="43X-PP-Xei"/>
+                                    <action selector="switchUI:" destination="O1h-RY-Ksh" eventType="touchUpInside" id="jSA-ub-2B7"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s9Z-Hk-s39" customClass="TransitionButton" customModule="TransitionButton">
+                                <rect key="frame" x="40" y="379" width="295" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="2BU-e4-dKA"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Login">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="login:" destination="O1h-RY-Ksh" eventType="touchUpInside" id="fzA-4L-9lR"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Wa7-0a-QsB" firstAttribute="trailing" secondItem="cmV-yk-z0B" secondAttribute="trailing" constant="40" id="9jf-69-mb8"/>
+                            <constraint firstItem="s9Z-Hk-s39" firstAttribute="leading" secondItem="Wa7-0a-QsB" secondAttribute="leading" constant="40" id="El5-AT-5O3"/>
+                            <constraint firstItem="Wa7-0a-QsB" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="s9Z-Hk-s39" secondAttribute="bottom" constant="20" id="FPa-j7-V3B"/>
+                            <constraint firstItem="cmV-yk-z0B" firstAttribute="top" secondItem="yjs-cS-cBo" secondAttribute="bottom" constant="40" id="H6L-42-ssd"/>
+                            <constraint firstItem="DRT-nx-NMW" firstAttribute="top" secondItem="FRG-Ga-uem" secondAttribute="bottom" constant="20" id="MZk-lK-lVA"/>
+                            <constraint firstItem="s9Z-Hk-s39" firstAttribute="top" secondItem="WZy-1f-abW" secondAttribute="bottom" constant="20" id="Ne5-St-GCe"/>
+                            <constraint firstItem="s9Z-Hk-s39" firstAttribute="centerX" secondItem="Wa7-0a-QsB" secondAttribute="centerX" id="Q7O-cZ-r1j"/>
+                            <constraint firstItem="DRT-nx-NMW" firstAttribute="top" secondItem="cmV-yk-z0B" secondAttribute="bottom" constant="20" id="Tao-Jz-fuy"/>
+                            <constraint firstItem="yjs-cS-cBo" firstAttribute="centerX" secondItem="Wa7-0a-QsB" secondAttribute="centerX" id="V4E-8S-3Vv"/>
+                            <constraint firstItem="Wa7-0a-QsB" firstAttribute="trailing" secondItem="s9Z-Hk-s39" secondAttribute="trailing" constant="40" id="XQm-lu-Lq6"/>
+                            <constraint firstItem="WZy-1f-abW" firstAttribute="top" secondItem="DRT-nx-NMW" secondAttribute="bottom" constant="40" id="cjp-Cw-1WO"/>
+                            <constraint firstItem="yjs-cS-cBo" firstAttribute="top" secondItem="Wa7-0a-QsB" secondAttribute="top" constant="20" id="n4N-BD-Vlg"/>
+                            <constraint firstItem="WZy-1f-abW" firstAttribute="centerX" secondItem="Wa7-0a-QsB" secondAttribute="centerX" id="nH5-et-pac"/>
+                            <constraint firstItem="Wa7-0a-QsB" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="yjs-cS-cBo" secondAttribute="trailing" constant="20" id="nmo-Lx-5aF"/>
+                            <constraint firstItem="yjs-cS-cBo" firstAttribute="leading" secondItem="Wa7-0a-QsB" secondAttribute="leading" constant="40" id="ol1-3V-jJF"/>
+                            <constraint firstItem="FRG-Ga-uem" firstAttribute="leading" secondItem="Wa7-0a-QsB" secondAttribute="leading" constant="30" id="rny-jn-QWs"/>
+                            <constraint firstItem="Wa7-0a-QsB" firstAttribute="trailing" secondItem="FRG-Ga-uem" secondAttribute="trailing" constant="40" id="u1W-nd-Dht"/>
+                            <constraint firstItem="cmV-yk-z0B" firstAttribute="leading" secondItem="Wa7-0a-QsB" secondAttribute="leading" constant="30" id="uBB-Wb-o3T"/>
+                            <constraint firstItem="DRT-nx-NMW" firstAttribute="leading" secondItem="Wa7-0a-QsB" secondAttribute="leading" constant="30" id="vAY-aX-9K9"/>
+                            <constraint firstItem="Wa7-0a-QsB" firstAttribute="trailing" secondItem="DRT-nx-NMW" secondAttribute="trailing" constant="40" id="yH6-I3-1o7"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Wa7-0a-QsB"/>
+                    </view>
+                    <connections>
+                        <outlet property="emailField" destination="FRG-Ga-uem" id="6T6-5s-ZHX"/>
+                        <outlet property="loginButton" destination="s9Z-Hk-s39" id="e2m-bv-xDt"/>
+                        <outlet property="passwordField" destination="DRT-nx-NMW" id="5G6-QQ-8sD"/>
+                        <outlet property="phoneField" destination="cmV-yk-z0B" id="cYW-Ye-P6h"/>
+                        <outlet property="switchButton" destination="WZy-1f-abW" id="CEc-Tu-Q0u"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CdJ-gF-hAh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1373.5999999999999" y="-889.20539730134942"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Wyp-IM-uYh">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="LmE-Sw-9AW" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="krl-ja-jdW">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="ylo-PJ-euB" kind="relationship" relationship="rootViewController" id="ZPP-GF-38t"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="EV8-Jp-hWs" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-167" y="-1620"/>
+        </scene>
+        <!--Menu Controller-->
+        <scene sceneID="yVf-X6-nSO">
+            <objects>
+                <tabBarController storyboardIdentifier="MenuController" autoresizesArchivedViewToFullSize="NO" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="AdK-dr-4bh" customClass="MenuController" customModule="HamburgerMenu" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="Fle-C0-COV"/>
+                    <value key="contentSizeForViewInPopover" type="size" width="0.0" height="0.0"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="DxZ-0x-anp">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="string" keyPath="menuNib" value="Menu"/>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <segue destination="LmW-e3-Rjh" kind="relationship" relationship="viewControllers" id="FkF-Re-yW2"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VgU-nW-Wik" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2399" y="-1621"/>
+        </scene>
+        <!--Item-->
+        <scene sceneID="mHb-eG-cOw">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="LmW-e3-Rjh" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="bQk-Fw-ncu"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="9EO-cR-L2v">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="A9B-fC-DnM" kind="relationship" relationship="rootViewController" id="G1P-rL-xXS"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Fp4-c8-Cjs" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3233" y="-1621"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="m1Z-Ub-mlD">
+            <objects>
+                <navigationController storyboardIdentifier="ToSNavigationController" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="hPo-AB-cOK" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="DUk-Wz-yxy">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="2VZ-Fe-jHr" kind="relationship" relationship="rootViewController" id="UsV-kU-YFj"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8zv-GG-iKL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1373.5999999999999" y="-162.3688155922039"/>
         </scene>
     </scenes>
 </document>

@@ -1,3 +1,4 @@
+
 //
 //  AppDelegate.swift
 //  News App
@@ -7,15 +8,31 @@
 //
 
 import UIKit
+import Firebase
+import IQKeyboardManagerSwift
+
+let APP_COLOR = UIColor.init(red: 22 / 255.0, green: 24 / 255.0, blue: 49 / 255.0, alpha: 1.0)
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
+    
+    // MARK: Properties
+    
     var window: UIWindow?
-
+    var sessionStartTime = Date()
+    
+    // MARK: App Delegate
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        FirebaseApp.configure()
+        
+        let keyboardManager = IQKeyboardManager.sharedManager()
+        keyboardManager.enable = true
+        keyboardManager.shouldResignOnTouchOutside = true
+        keyboardManager.keyboardDistanceFromTextField = 50
+        keyboardManager.overrideKeyboardAppearance = false
+        keyboardManager.enableAutoToolbar = false
+        
         return true
     }
 
@@ -27,10 +44,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationDidEnterBackground(_ application: UIApplication) {
         // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
         // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
+        
+        NotificationCenter.default.post(name: Notification.Name.init("logHours"), object: nil, userInfo: [
+            "elapsed" : Date().timeIntervalSince(sessionStartTime)
+            ])
     }
 
     func applicationWillEnterForeground(_ application: UIApplication) {
         // Called as part of the transition from the background to the active state; here you can undo many of the changes made on entering the background.
+
+        sessionStartTime = Date()
     }
 
     func applicationDidBecomeActive(_ application: UIApplication) {
@@ -40,7 +63,5 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
-
-
 }
 
