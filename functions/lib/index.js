@@ -110,7 +110,10 @@ const auth = (token) => {
 const filtered = (feeds) => {
     const filteredFeed = shuffle([].concat.apply([], feeds.map(feed => {
         return feed.items.filter(item => {
-            return (item.hasOwnProperty('title') && item.hasOwnProperty('link') && item.hasOwnProperty('isoDate') && daysBetween(new Date(), new Date(item['isoDate'])) < 2);
+            return (item.hasOwnProperty('title')
+                && item.hasOwnProperty('link')
+                && item.hasOwnProperty('isoDate')
+                && daysBetween(new Date(), new Date(item['isoDate'])) < 2);
         });
     })));
     return filteredFeed;
@@ -218,6 +221,76 @@ exports.markArticles = functions.https.onRequest((req, res) => {
     }).catch(error => {
         console.log(error);
         res.send(error);
+    });
+});
+exports.saveArticle = functions.https.onRequest((req, res) => {
+    const token = req.get('Authorization').split('Bearer ')[1];
+    const userID = req.query.userID;
+    const userRef = db.collection('users').doc(userID);
+    const article = parseArticle(JSON.parse(req.body.article));
+    return db.runTransaction(transaction => {
+        return Promise.all([auth(token), transaction.get(userRef)]).then(results => {
+            const decoded = results[0];
+            const userSnapshot = results[1];
+            const saved = userSnapshot.get('saved') ? userSnapshot.get('saved') : [];
+            if (saved.filter(item => item.url === article.url).length > 0) {
+                res.status(304).end();
+                const unique = {};
+                return transaction.update(userRef, 'saved', saved.filter(item => {
+                    if (unique.hasOwnProperty(item.url)) {
+                        return false;
+                    }
+                    else {
+                        unique[item.url] = true;
+                        return true;
+                    }
+                }));
+            }
+            saved.push({
+                source: article.source,
+                title: article.title,
+                url: article.url,
+                category: article.category,
+                date: article.date
+            });
+            res.status(200).end();
+            return transaction.update(userRef, 'saved', saved);
+        }).catch(error => {
+            console.log(error);
+            return res.send(error);
+        });
+    });
+    // return Promise.all([auth(token), userRef.get()]).then(results => {
+    // 	const decoded: admin.auth.DecodedIdToken = results[0];
+    // 	const userSnapshot: FirebaseFirestore.DocumentSnapshot = results[1];
+    // 	const user: any = userSnapshot.data();
+    // 	const saved: [any] = user['saved'];
+    // 	saved.push(
+    // 			{
+    // 				source: article.source,
+    // 				title: article.title,
+    // 				url: article.url,
+    // 				category: article.category,
+    // 				date: article.date
+    // 			}
+    // 		);
+    // 	return userRef.update({ 'saved' : saved });
+    // })
+});
+exports.getSaved = functions.https.onRequest((req, res) => {
+    const token = req.get('Authorization').split('Bearer ')[1];
+    const userID = req.query.userID;
+    const userRef = db.collection('users').doc(userID);
+    return Promise.all([auth(token), userRef.get()]).then(results => {
+        const decoded = results[0];
+        const userSnapshot = results[1];
+        const user = userSnapshot.data();
+        const saved = user['saved'].map(parseArticle);
+        res.setHeader('Content-Type', 'application/json');
+        return res.status(200).send(JSON.stringify(saved));
+    }).catch(error => {
+        console.log(error);
+        return res.send(error);
     });
 });
 exports.sendArticlesToUser = functions.https.onRequest((req, res) => {

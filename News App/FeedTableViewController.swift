@@ -32,6 +32,7 @@ class FeedTableViewController: UITableViewController, SFSafariViewControllerDele
         super.viewDidLoad()
         
         NotificationCenter.default.addObserver(self, selector: #selector(logHours(notification:)), name: Notification.Name.init("logHours"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(showSaved), name: Notification.Name.init("showSaved"), object: nil)
         
         agreeToTerms()
         
@@ -43,14 +44,6 @@ class FeedTableViewController: UITableViewController, SFSafariViewControllerDele
                 self.survey()
                 self.markVisibleArticles()
             }
-        }
-    }
-    
-    func agreeToTerms() {
-        self.promptedForAgreement = true
-        if !UserDefaults.standard.bool(forKey: "ToS") {
-            guard let vc = storyboard?.instantiateViewController(withIdentifier: "ToSNavigationController") else { return }
-            self.navigationController?.present(vc, animated: true, completion: nil)
         }
     }
     
@@ -92,6 +85,7 @@ class FeedTableViewController: UITableViewController, SFSafariViewControllerDele
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "articleCell", for: indexPath) as! ArticleTableViewCell
         let article = articles[indexPath.row]
+        cell.article = article
         cell.titleLabel.text = article.title
         cell.sourceLabel.text = article.source
         
@@ -119,7 +113,7 @@ class FeedTableViewController: UITableViewController, SFSafariViewControllerDele
         tableView.deselectRow(at: indexPath, animated: true)
     }
     
-    // MARK: Functions
+    // MARK: Data Functions
     
     func mark(_ articles: [Article], read: Bool, elapsed: TimeInterval?) {
         Auth.auth().currentUser?.getIDToken(completion: { (token, error) in
@@ -278,6 +272,14 @@ class FeedTableViewController: UITableViewController, SFSafariViewControllerDele
     }
     
     // MARK: Survey Functions
+    
+    func agreeToTerms() {
+        self.promptedForAgreement = true
+        if !UserDefaults.standard.bool(forKey: "ToS") {
+            guard let vc = storyboard?.instantiateViewController(withIdentifier: "ToSNavigationController") else { return }
+            self.navigationController?.present(vc, animated: true, completion: nil)
+        }
+    }
     
     func survey() {
         db.collection("users").document(userID).getDocument { (document, error) in
@@ -594,15 +596,6 @@ class FeedTableViewController: UITableViewController, SFSafariViewControllerDele
         
         // Q11
         
-//        let q11Step1 = ORKQuestionStep(identifier: "q11Step1", title: "Conoscenza della politica", text: "Bandiera dell’islam", answer: ORKAnswerFormat.scale(withMaximumValue: 10, minimumValue: 0, defaultValue: 0, step: 1, vertical: false, maximumValueDescription: nil, minimumValueDescription: nil))
-//        let q11Step2 = ORKQuestionStep(identifier: "q11Step2", title: "Conoscenza della politica", text: "Mario Draghi", answer: ORKAnswerFormat.scale(withMaximumValue: 10, minimumValue: 0, defaultValue: 0, step: 1, vertical: false, maximumValueDescription: nil, minimumValueDescription: nil))
-//        let q11Step3 = ORKQuestionStep(identifier: "q11Step3", title: "Conoscenza della politica", text: "Il PIL procapite italiano e’ 27 700 Euro", answer: ORKAnswerFormat.scale(withMaximumValue: 10, minimumValue: 0, defaultValue: 0, step: 1, vertical: false, maximumValueDescription: nil, minimumValueDescription: nil))
-//        let q11Step4 = ORKQuestionStep(identifier: "q11Step4", title: "Conoscenza della politica", text: "Mattarella dalla foto", answer: ORKAnswerFormat.scale(withMaximumValue: 10, minimumValue: 0, defaultValue: 0, step: 1, vertical: false, maximumValueDescription: nil, minimumValueDescription: nil))
-//        let q11Step5 = ORKQuestionStep(identifier: "q11Step5", title: "Conoscenza della politica", text: "Macron dalla foto", answer: ORKAnswerFormat.scale(withMaximumValue: 10, minimumValue: 0, defaultValue: 0, step: 1, vertical: false, maximumValueDescription: nil, minimumValueDescription: nil))
-//        let q11Step6 = ORKQuestionStep(identifier: "q11Step6", title: "Conoscenza della politica", text: "Simbolo Movimento 5 stelle", answer: ORKAnswerFormat.scale(withMaximumValue: 10, minimumValue: 0, defaultValue: 0, step: 1, vertical: false, maximumValueDescription: nil, minimumValueDescription: nil))
-        
-        // Q12
-        
         let q11Step1 = ORKQuestionStep(identifier: "q11Step1", title: "A quale di queste figure corrisponde il simbolo di...", text: "Bandiera dell’Islam", answer: ORKAnswerFormat.choiceAnswerFormat(with: [
                 ORKImageChoice(normalImage: UIImage(named: "islam0"), selectedImage: UIImage(named: "islam0_selected"), text: nil, value: 1 as NSNumber),
                 ORKImageChoice(normalImage: UIImage(named: "islam1"), selectedImage: UIImage(named: "islam1_selected"), text: nil, value: 0 as NSNumber),
@@ -688,6 +681,11 @@ class FeedTableViewController: UITableViewController, SFSafariViewControllerDele
     
     // MARK: UI Functions
     
+    @objc func showSaved() {
+        guard let vc = storyboard?.instantiateViewController(withIdentifier: "SavedTableViewController") as? SavedTableViewController else { return }
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
     func dayDifference(from date: Date) -> Int {
         let calendar = NSCalendar.current
         
@@ -757,6 +755,13 @@ class FeedTableViewController: UITableViewController, SFSafariViewControllerDele
         
         self.loadingView.tintColor = UIColor.white
         tableView.dg_setPullToRefreshFillColor(APP_COLOR)
+    }
+    
+    // MARK: Menu Delegate
+    
+    func didClickSaved() {
+        guard let vc = storyboard?.instantiateViewController(withIdentifier: "SavedTableViewController") else { return }
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     // MARK: ORKTaskViewController Delegate

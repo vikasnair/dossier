@@ -19,6 +19,7 @@
 		568DFB2520A9E1B3001E36C8 /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 568DFB2420A9E1B3001E36C8 /* CreateAccountViewController.swift */; };
 		569877B420B9FF3D003C80BF /* Menu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 569877B320B9FF3D003C80BF /* Menu.xib */; };
 		569877B820B9FFFB003C80BF /* Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 569877B720B9FFFB003C80BF /* Menu.swift */; };
+		569C5A2C21134DB200E43EF4 /* SavedTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 569C5A2B21134DB200E43EF4 /* SavedTableViewController.swift */; };
 		56BBD92A20A9EA6500C69FC9 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56BBD92920A9EA6500C69FC9 /* LoginViewController.swift */; };
 		56BBD92C20A9EBA100C69FC9 /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56BBD92B20A9EBA100C69FC9 /* AuthViewController.swift */; };
 		56BBD92E20A9F04000C69FC9 /* FeedTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56BBD92D20A9F04000C69FC9 /* FeedTableViewController.swift */; };
@@ -104,6 +105,7 @@
 		568DFB2420A9E1B3001E36C8 /* CreateAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountViewController.swift; sourceTree = "<group>"; };
 		569877B320B9FF3D003C80BF /* Menu.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Menu.xib; sourceTree = "<group>"; };
 		569877B720B9FFFB003C80BF /* Menu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Menu.swift; sourceTree = "<group>"; };
+		569C5A2B21134DB200E43EF4 /* SavedTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedTableViewController.swift; sourceTree = "<group>"; };
 		56BBD92920A9EA6500C69FC9 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		56BBD92B20A9EBA100C69FC9 /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
 		56BBD92D20A9F04000C69FC9 /* FeedTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedTableViewController.swift; sourceTree = "<group>"; };
@@ -174,6 +176,7 @@
 			isa = PBXGroup;
 			children = (
 				568DFB2320A9E039001E36C8 /* News App.entitlements */,
+				569C5A2B21134DB200E43EF4 /* SavedTableViewController.swift */,
 				56BBD92D20A9F04000C69FC9 /* FeedTableViewController.swift */,
 				56BBD93120A9FB0B00C69FC9 /* ArticleTableViewCell.swift */,
 				56BBD92F20A9F5F700C69FC9 /* Article.swift */,
@@ -608,6 +611,7 @@
 				56BBD93020A9F5F700C69FC9 /* Article.swift in Sources */,
 				56BBD92A20A9EA6500C69FC9 /* LoginViewController.swift in Sources */,
 				569877B820B9FFFB003C80BF /* Menu.swift in Sources */,
+				569C5A2C21134DB200E43EF4 /* SavedTableViewController.swift in Sources */,
 				56BBD92E20A9F04000C69FC9 /* FeedTableViewController.swift in Sources */,
 				568DFB2520A9E1B3001E36C8 /* CreateAccountViewController.swift in Sources */,
 				56BBD92C20A9EBA100C69FC9 /* AuthViewController.swift in Sources */,

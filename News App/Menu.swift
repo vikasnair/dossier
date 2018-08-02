@@ -15,11 +15,17 @@ class Menu: MenuView {
     // MARK: Properties
     
     let db = Firestore.firestore()
-    
-    // MARK: Actions
 
+    // MARK: Actions
+    
+    @IBAction func showSaved(_ sender: Any) {
+        self.toggle(animated: true)
+        NotificationCenter.default.post(name: Notification.Name("showSaved"), object: nil)
+    }
+    
     @IBAction func logout(_ sender: Any) {
         UserDefaults.standard.removeObject(forKey: "feed")
+        UserDefaults.standard.removeObject(forKey: "saved")
         UserDefaults.standard.removeObject(forKey: "ToS")
         
         do {
@@ -44,6 +50,7 @@ class Menu: MenuView {
             
             self.db.collection("users").document(user.uid).delete()
             UserDefaults.standard.removeObject(forKey: "feed")
+            UserDefaults.standard.removeObject(forKey: "saved")
             UserDefaults.standard.removeObject(forKey: "ToS")
             
             user.delete(completion: { (error) in

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -17,7 +17,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="psy-Ve-IwT">
-                    <rect key="frame" x="40" y="60" width="52" height="30"/>
+                    <rect key="frame" x="40" y="90" width="52" height="30"/>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                     <state key="normal" title="Logout">
                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -27,7 +27,7 @@
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UpG-Ez-YlY">
-                    <rect key="frame" x="40" y="110" width="111" height="30"/>
+                    <rect key="frame" x="40" y="140" width="111" height="30"/>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                     <state key="normal" title="Delete account">
                         <color key="titleColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -36,15 +36,28 @@
                         <action selector="deleteAccount:" destination="iN0-l3-epB" eventType="touchUpInside" id="kLj-AC-7xK"/>
                     </connections>
                 </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eDX-bv-GF7">
+                    <rect key="frame" x="40" y="40" width="45" height="30"/>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                    <state key="normal" title="Saved">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                    <connections>
+                        <action selector="showSaved:" destination="iN0-l3-epB" eventType="touchUpInside" id="XPp-Mo-Vyz"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" red="0.088898606598377228" green="0.095504499971866608" blue="0.18432241678237915" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
             <constraints>
-                <constraint firstItem="psy-Ve-IwT" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="40" id="S6t-ME-8at"/>
+                <constraint firstItem="eDX-bv-GF7" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="40" id="1cq-qF-nLW"/>
+                <constraint firstItem="psy-Ve-IwT" firstAttribute="top" secondItem="eDX-bv-GF7" secondAttribute="bottom" constant="20" id="GwP-OF-vnM"/>
                 <constraint firstItem="psy-Ve-IwT" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="40" id="hby-vA-gK1"/>
                 <constraint firstItem="UpG-Ez-YlY" firstAttribute="top" secondItem="psy-Ve-IwT" secondAttribute="bottom" constant="20" id="jey-Hj-16h"/>
+                <constraint firstItem="eDX-bv-GF7" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="20" id="lsQ-bw-5UP"/>
                 <constraint firstItem="UpG-Ez-YlY" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="40" id="twr-Dk-SGg"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <point key="canvasLocation" x="33.5" y="53.5"/>
         </view>
     </objects>
 </document>
