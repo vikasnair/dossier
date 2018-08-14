@@ -12,8 +12,9 @@ import Alamofire
 import SafariServices
 import DGElasticPullToRefresh
 import ResearchKit
+import CoreLocation
 
-class FeedTableViewController: UITableViewController, SFSafariViewControllerDelegate, ORKTaskViewControllerDelegate, UISearchResultsUpdating, UISearchBarDelegate {
+class FeedTableViewController: UITableViewController, SFSafariViewControllerDelegate, ORKTaskViewControllerDelegate, UISearchResultsUpdating, UISearchBarDelegate, CLLocationManagerDelegate {
     
     // MARK: Properties
     
@@ -27,21 +28,29 @@ class FeedTableViewController: UITableViewController, SFSafariViewControllerDele
     var promptedForAgreement = false
     var promptedForSurvey = false
     let searchController = UISearchController(searchResultsController: nil)
+    let locationManager = CLLocationManager()
 
     // MARK: UIViewController Delegate
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        locationManager.delegate = self
+        
         NotificationCenter.default.addObserver(self, selector: #selector(logHours(notification:)), name: Notification.Name.init("logHours"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(showSaved), name: Notification.Name.init("showSaved"), object: nil)
         
         agreeToTerms()
-        
+
         DispatchQueue.global(qos: .background).async {
             while !UserDefaults.standard.bool(forKey: "ToS") {}
             
             DispatchQueue.main.async {
+                if CLLocationManager.authorizationStatus() == .notDetermined {
+                    self.locationManager.requestWhenInUseAuthorization()
+                }
+                
+                self.setupUI()
                 self.getFeed()
                 self.survey()
                 self.markVisibleArticles()
@@ -96,7 +105,7 @@ class FeedTableViewController: UITableViewController, SFSafariViewControllerDele
         cell.sourceLabel.text = article.source
         
         if let date = self.dateFromISO(article.date) {
-            cell.dateLabel.text = "· \(formatDate(date))"
+            cell.dateLabel.text = "· \(formatDate(date).uppercased())"
         }
         
         return cell
@@ -687,36 +696,46 @@ class FeedTableViewController: UITableViewController, SFSafariViewControllerDele
     
     // MARK: UI Functions
     
-//    func getWeather() {
-//        let city = "Tampa"
-//
-//        let headers: HTTPHeaders = [
-//            "Accept" : "application/json",
-//            "Content-Type" : "application/json"
-//        ]
-//
-    //        Alamofire.request("http://api.openweathermap.org/data/2.5/weather?q=\(city)&APPID=####", method: .get, headers: headers).responseJSON { (response) in
-//            guard response.error == nil, response.data != nil else {
-//                print("error with alamofire response in getweather: \(String(describing: response.error))")
-//                return
-//            }
-//
-//            do {
-//                guard let json = try JSONSerialization.jsonObject(with: response.data!, options: .mutableContainers) as? [String : Any], let weather = json["main"] as? [String: Any], let temperature = weather["temp"] as? Double else {
-//                    print("failed to parse JSON in weather")
-//                    return
-//                }
-//
-//
-//                print(temperature)
-//
-//            } catch {
-//                print("error in getweather: \(error)")
-//            }
-//
-//
-//        }
-//    }
+    func getWeather() {
+        locationManager.requestLocation()
+        
+        guard CLLocationManager.authorizationStatus() == .authorizedWhenInUse, let location = locationManager.location else { return }
+
+        let headers: HTTPHeaders = [
+            "Accept" : "application/json",
+            "Content-Type" : "application/json"
+        ]
+
+        Alamofire.request("http://api.openweathermap.org/data/2.5/weather?lat=\(location.coordinate.latitude)&lon=\(location.coordinate.longitude)&APPID=97b54b03ee6eb4e848edae816a1a2061", method: .get, headers: headers).responseJSON { (response) in
+            guard response.error == nil, response.data != nil else {
+                print("error with alamofire response in getweather: \(String(describing: response.error))")
+                return
+            }
+
+            do {
+                guard let json = try JSONSerialization.jsonObject(with: response.data!, options: .mutableContainers) as? [String : Any], let weather = json["main"] as? [String: Any], let temperatureK = weather["temp"] as? Double else {
+                    print("failed to parse JSON in weather")
+                    return
+                }
+                
+                let temperatureC: Int = Int(round(temperatureK - 273.15))
+                let weatherView = UITextView()
+                let hour = Calendar.current.component(.hour, from: Date())
+                let greeting = hour > 3 && hour < 12 ? "Buongiorno" :  (hour < 18 ? "Buon pomeriggio" : "Buonasera")
+                let intro: NSAttributedString = NSAttributedString(string: "\(self.getToday().uppercased()).", attributes: [NSAttributedStringKey.font: UIFont.init(name: "DIN Condensed", size: 36), NSAttributedStringKey.foregroundColor: SECONDARY_COLOR])
+                let detail: NSAttributedString = NSAttributedString(string: "\n\(greeting).\nLa temperatura fuori e’ di \(temperatureC) gradi.", attributes: [NSAttributedStringKey.font: UIFont.init(name: "DIN Condensed", size: 24), NSAttributedStringKey.foregroundColor: TERTIARY_COLOR])
+                let text: NSMutableAttributedString = NSMutableAttributedString(attributedString: intro)
+                text.append(detail)
+                weatherView.attributedText = text
+                weatherView.textContainerInset = UIEdgeInsets(top: 20, left: 16, bottom: 20, right: 0)
+                self.tableView.tableHeaderView = weatherView
+                weatherView.sizeToFit()
+        
+            } catch {
+                print("error in getweather: \(error)")
+            }
+        }
+    }
     
     @objc func showSaved() {
         guard let vc = storyboard?.instantiateViewController(withIdentifier: "SavedTableViewController") as? SavedTableViewController else { return }
@@ -737,19 +756,27 @@ class FeedTableViewController: UITableViewController, SFSafariViewControllerDele
         }
     }
     
+    func getToday() -> String {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "E, d MMM"
+        formatter.locale = Locale(identifier: "it_IT")
+        formatter.timeZone = TimeZone.current
+        return formatter.string(from: Date())
+    }
+    
     func formatDate(_ date: Date) -> String {
         let difference = dayDifference(from: date)
         let formatter = DateFormatter()
         
         if difference > 0 {
             print("what the fuck")
-            formatter.dateFormat = "MMM d, h:mm a"
+            formatter.dateFormat = "d MMM, HH:mm"
         } else if difference == 0 {
-            formatter.dateFormat = "'Oggi,' h:mm a"
+            formatter.dateFormat = "'Oggi,' HH:mm"
         } else if difference > -7 {
-            formatter.dateFormat = "E MMM d, h:mm a"
+            formatter.dateFormat = "E d MMM, HH:mm"
         } else {
-            formatter.dateFormat = "MMM d, h:mm a"
+            formatter.dateFormat = "d MMM, HH:mm"
         }
         
         formatter.locale = Locale(identifier: "it_IT")
@@ -768,8 +795,9 @@ class FeedTableViewController: UITableViewController, SFSafariViewControllerDele
     }
     
     func setupUI() {
-        self.title = "Dossier"
+//        self.title = "Dossier"
         
+        getWeather()
         initializePullToRefresh()
         
         self.definesPresentationContext = true
@@ -802,32 +830,24 @@ class FeedTableViewController: UITableViewController, SFSafariViewControllerDele
         
         searchBar.sizeToFit()
         
-//        tableView.tableHeaderView = searchController.searchBar
         navigationItem.titleView = searchController.searchBar
-//        let titleView = UIView()
-//        let weatherView = UITextView()
-//        weatherView.attributedText = NSAttributedString(string: "Good morning.")
-//        titleView.addSubview(weatherView)
-//        titleView.addSubview(searchController.searchBar)
-//        navigationItem.titleView = titleView
         
         guard let navigationBar = self.navigationController?.navigationBar else { return }
-        
+
         navigationController!.view.layoutSubviews()
-        navigationBar.titleTextAttributes = [NSAttributedStringKey.font: UIFont.init(name: "DIN Condensed", size: 32), NSAttributedStringKey.foregroundColor: UIColor.white]
+        navigationBar.titleTextAttributes = [NSAttributedStringKey.font: UIFont.init(name: "DIN Condensed", size: 36), NSAttributedStringKey.foregroundColor: UIColor.white]
         navigationBar.barTintColor = APP_COLOR
         navigationBar.tintColor = UIColor.white
         navigationBar.shadowImage = UIImage() // UIImage(color: APP_COLOR)
         navigationBar.isTranslucent = false
         
         UIApplication.shared.statusBarStyle = .lightContent
-        
-//        getWeather()
     }
     
     func initializePullToRefresh() {
         tableView.dg_addPullToRefreshWithActionHandler({
             self.getFeed()
+            self.getWeather()
         }, loadingView: self.loadingView)
         
         self.loadingView.tintColor = UIColor.white
@@ -932,4 +952,14 @@ class FeedTableViewController: UITableViewController, SFSafariViewControllerDele
     // MARK: UISearchResultsUpdating Delegate
     
     func updateSearchResults(for searchController: UISearchController) {}
+    
+    // MARK: CLLocationManager Delegate
+    
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+        print("error:: \(error.localizedDescription)")
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {}
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {}
 }

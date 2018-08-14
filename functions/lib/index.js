@@ -124,7 +124,7 @@ const parseArticle = (data) => {
 const getArticlesFrom = (feed, category) => {
     const articles = feed.map(item => {
         return parseArticle({
-            source: sources.find(source => item.link.includes(source.toLowerCase().replace(/\s/g, ''))),
+            source: sources.find(source => item.link.includes(source.toLowerCase().replace(/\s/g, ''))) || '–',
             title: item.title,
             url: item.link,
             category: category,

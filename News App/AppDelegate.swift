@@ -12,6 +12,8 @@ import Firebase
 import IQKeyboardManagerSwift
 
 let APP_COLOR = UIColor.init(red: 22 / 255.0, green: 24 / 255.0, blue: 49 / 255.0, alpha: 1.0)
+let SECONDARY_COLOR = UIColor.init(red: 80 / 255.0, green: 135 / 255.0, blue: 244 / 255.0, alpha: 1.0)
+let TERTIARY_COLOR = UIColor.lightGray
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
