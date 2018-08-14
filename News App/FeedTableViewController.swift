@@ -13,18 +13,20 @@ import SafariServices
 import DGElasticPullToRefresh
 import ResearchKit
 
-class FeedTableViewController: UITableViewController, SFSafariViewControllerDelegate, ORKTaskViewControllerDelegate {
+class FeedTableViewController: UITableViewController, SFSafariViewControllerDelegate, ORKTaskViewControllerDelegate, UISearchResultsUpdating, UISearchBarDelegate {
     
     // MARK: Properties
     
     let db = Firestore.firestore()
     let userID = Auth.auth().currentUser!.uid
     var articles: [Article] = []
+    var filteredArticles: [Article]?
     var distribution: String?
     let loadingView = DGElasticPullToRefreshLoadingView()
     var resurvey = false
     var promptedForAgreement = false
     var promptedForSurvey = false
+    let searchController = UISearchController(searchResultsController: nil)
 
     // MARK: UIViewController Delegate
     
@@ -64,6 +66,8 @@ class FeedTableViewController: UITableViewController, SFSafariViewControllerDele
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         UIApplication.shared.statusBarStyle = .default
+        searchController.isActive = false
+        searchController.dismiss(animated: true, completion: nil)
     }
 
     // MARK: UITableViewController Delegate
@@ -79,12 +83,14 @@ class FeedTableViewController: UITableViewController, SFSafariViewControllerDele
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return articles.count
+        guard let filtered = filteredArticles else { return articles.count }
+        return filtered.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "articleCell", for: indexPath) as! ArticleTableViewCell
-        let article = articles[indexPath.row]
+        
+        let article = filteredArticles == nil ? articles[indexPath.row] : filteredArticles![indexPath.row]
         cell.article = article
         cell.titleLabel.text = article.title
         cell.sourceLabel.text = article.source
@@ -97,7 +103,7 @@ class FeedTableViewController: UITableViewController, SFSafariViewControllerDele
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let article = articles[indexPath.row]
+        let article = filteredArticles == nil ? articles[indexPath.row] : filteredArticles![indexPath.row]
         let safari = SFSafariViewController(url: article.url)
         safari.delegate = self
         safari.preferredControlTintColor = APP_COLOR
@@ -156,7 +162,7 @@ class FeedTableViewController: UITableViewController, SFSafariViewControllerDele
         var articlesToMark: [Article] = []
         
         for path in visibleRows {
-            articlesToMark.append(self.articles[path.row])
+            articlesToMark.append(filteredArticles == nil ? self.articles[path.row] : self.filteredArticles![path.row])
         }
         
         mark(articlesToMark, read: false, elapsed: nil)
@@ -681,6 +687,37 @@ class FeedTableViewController: UITableViewController, SFSafariViewControllerDele
     
     // MARK: UI Functions
     
+//    func getWeather() {
+//        let city = "Tampa"
+//
+//        let headers: HTTPHeaders = [
+//            "Accept" : "application/json",
+//            "Content-Type" : "application/json"
+//        ]
+//
+    //        Alamofire.request("http://api.openweathermap.org/data/2.5/weather?q=\(city)&APPID=####", method: .get, headers: headers).responseJSON { (response) in
+//            guard response.error == nil, response.data != nil else {
+//                print("error with alamofire response in getweather: \(String(describing: response.error))")
+//                return
+//            }
+//
+//            do {
+//                guard let json = try JSONSerialization.jsonObject(with: response.data!, options: .mutableContainers) as? [String : Any], let weather = json["main"] as? [String: Any], let temperature = weather["temp"] as? Double else {
+//                    print("failed to parse JSON in weather")
+//                    return
+//                }
+//
+//
+//                print(temperature)
+//
+//            } catch {
+//                print("error in getweather: \(error)")
+//            }
+//
+//
+//        }
+//    }
+    
     @objc func showSaved() {
         guard let vc = storyboard?.instantiateViewController(withIdentifier: "SavedTableViewController") as? SavedTableViewController else { return }
         self.navigationController?.pushViewController(vc, animated: true)
@@ -735,10 +772,48 @@ class FeedTableViewController: UITableViewController, SFSafariViewControllerDele
         
         initializePullToRefresh()
         
+        self.definesPresentationContext = true
+        
+        searchController.searchResultsUpdater = self
+        searchController.searchBar.delegate = self
+        searchController.hidesNavigationBarDuringPresentation = false
+        searchController.dimsBackgroundDuringPresentation = false
+        searchController.definesPresentationContext = true
+        searchController.isActive = false
+        
+        let searchBar = self.searchController.searchBar
+        searchBar.searchBarStyle = .minimal
+        searchBar.tintColor = .white
+        searchBar.barTintColor = .white
+        
+        let textFieldInsideSearchBar = searchBar.value(forKey: "searchField") as? UITextField
+        textFieldInsideSearchBar?.textColor = .white
+        
+        let textFieldInsideSearchBarLabel = textFieldInsideSearchBar?.value(forKey: "placeholderLabel") as? UILabel
+        textFieldInsideSearchBarLabel?.textColor = .white
+        
+        let searchIconView = textFieldInsideSearchBar?.leftView as? UIImageView
+        searchIconView?.image = searchIconView?.image?.withRenderingMode(.alwaysTemplate)
+        searchIconView?.tintColor = .white
+        
+        let clearButton = textFieldInsideSearchBar?.value(forKey: "_clearButton") as? UIButton
+        clearButton?.setImage(clearButton?.imageView?.image?.withRenderingMode(.alwaysTemplate), for: .normal)
+        clearButton?.tintColor = .white
+        
+        searchBar.sizeToFit()
+        
+//        tableView.tableHeaderView = searchController.searchBar
+        navigationItem.titleView = searchController.searchBar
+//        let titleView = UIView()
+//        let weatherView = UITextView()
+//        weatherView.attributedText = NSAttributedString(string: "Good morning.")
+//        titleView.addSubview(weatherView)
+//        titleView.addSubview(searchController.searchBar)
+//        navigationItem.titleView = titleView
+        
         guard let navigationBar = self.navigationController?.navigationBar else { return }
         
-        //        navigationBar.setBackgroundImage(UIImage(named: "Navigation"), for: .default)
-        
+        navigationController!.view.layoutSubviews()
         navigationBar.titleTextAttributes = [NSAttributedStringKey.font: UIFont.init(name: "DIN Condensed", size: 32), NSAttributedStringKey.foregroundColor: UIColor.white]
         navigationBar.barTintColor = APP_COLOR
         navigationBar.tintColor = UIColor.white
@@ -746,6 +821,8 @@ class FeedTableViewController: UITableViewController, SFSafariViewControllerDele
         navigationBar.isTranslucent = false
         
         UIApplication.shared.statusBarStyle = .lightContent
+        
+//        getWeather()
     }
     
     func initializePullToRefresh() {
@@ -791,6 +868,41 @@ class FeedTableViewController: UITableViewController, SFSafariViewControllerDele
         dismiss(animated: true, completion: nil)
     }
     
+    @objc func updateSearchResultsWithDelay() {
+        if let searchText = searchController.searchBar.text, !searchText.isEmpty {
+            var searchedArticles: [Article] = []
+            
+            for article in self.articles {
+                let title = article.title.lowercased()
+                let source = article.source.lowercased()
+                
+                if searchText.count <= title.count {
+                    let substring = title.substring(to: searchText.endIndex)
+                    
+                    if substring == searchText.lowercased() {
+                        searchedArticles.append(article)
+                        continue
+                    }
+                }
+                
+                if searchText.count <= source.count {
+                    let substring = source.substring(to: searchText.endIndex)
+                    
+                    if substring == searchText.lowercased() {
+                        searchedArticles.append(article)
+                        continue
+                    }
+                }
+            }
+            
+            self.filteredArticles = searchedArticles
+        } else {
+            self.filteredArticles = nil
+        }
+        
+        self.tableView.reloadData()
+    }
+    
     // MARK: SFSafariViewController Delegate
     
     func safariViewControllerDidFinish(_ controller: SFSafariViewController) {
@@ -809,4 +921,15 @@ class FeedTableViewController: UITableViewController, SFSafariViewControllerDele
         guard !decelerate else { return }
         markVisibleArticles()
     }
+    
+    // MARK: UISearchBar Delegate
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        NSObject.cancelPreviousPerformRequests(withTarget: self, selector: #selector(updateSearchResultsWithDelay), object: nil)
+        self.perform(#selector(updateSearchResultsWithDelay), with: nil, afterDelay: 0.5)
+    }
+    
+    // MARK: UISearchResultsUpdating Delegate
+    
+    func updateSearchResults(for searchController: UISearchController) {}
 }

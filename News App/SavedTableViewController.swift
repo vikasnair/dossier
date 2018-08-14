@@ -28,8 +28,8 @@ class SavedTableViewController: UITableViewController, SFSafariViewControllerDel
         self.getSaved()
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         setupUI()
     }
 
@@ -222,6 +222,7 @@ class SavedTableViewController: UITableViewController, SFSafariViewControllerDel
         
         //        navigationBar.setBackgroundImage(UIImage(named: "Navigation"), for: .default)
         
+        navigationController!.view.layoutSubviews()
         navigationBar.titleTextAttributes = [NSAttributedStringKey.font: UIFont.init(name: "DIN Condensed", size: 32), NSAttributedStringKey.foregroundColor: UIColor.white]
         navigationBar.barTintColor = APP_COLOR
         navigationBar.tintColor = UIColor.white
