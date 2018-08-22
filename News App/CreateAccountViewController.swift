@@ -157,9 +157,9 @@ class CreateAccountViewController: UIViewController {
     }
     
     func signUpWithEmail(_ email: String, _ password: String) {
-        Auth.auth().createUser(withEmail: email, password: password) { (user, error) in
-            guard error == nil, user != nil, self.createUser(self.nameField.text!) else {
-                user?.delete(completion: { (error) in
+        Auth.auth().createUser(withEmail: email, password: password) { (result, error) in
+            guard error == nil, result != nil, self.createUser(self.nameField.text!) else {
+                result!.user.delete(completion: { (error) in
                     if error != nil { print("how did it fuck up this badly") }
                     else { print("user deleted") }
                 })

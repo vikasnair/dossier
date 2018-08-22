@@ -16,6 +16,7 @@
 		5686CE9F1FF6A7C400D611DB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5686CE9D1FF6A7C400D611DB /* LaunchScreen.storyboard */; };
 		5686CEAA1FF6A7C400D611DB /* News_AppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5686CEA91FF6A7C400D611DB /* News_AppTests.swift */; };
 		5686CEB51FF6A7C400D611DB /* News_AppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5686CEB41FF6A7C400D611DB /* News_AppUITests.swift */; };
+		568C3690212CED4F0089105C /* ProgressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 568C368F212CED4F0089105C /* ProgressViewController.swift */; };
 		568DFB2520A9E1B3001E36C8 /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 568DFB2420A9E1B3001E36C8 /* CreateAccountViewController.swift */; };
 		569877B420B9FF3D003C80BF /* Menu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 569877B320B9FF3D003C80BF /* Menu.xib */; };
 		569877B820B9FFFB003C80BF /* Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 569877B720B9FFFB003C80BF /* Menu.swift */; };
@@ -101,6 +102,7 @@
 		5686CEB01FF6A7C400D611DB /* News AppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "News AppUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5686CEB41FF6A7C400D611DB /* News_AppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = News_AppUITests.swift; sourceTree = "<group>"; };
 		5686CEB61FF6A7C400D611DB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		568C368F212CED4F0089105C /* ProgressViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressViewController.swift; sourceTree = "<group>"; };
 		568DFB2320A9E039001E36C8 /* News App.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "News App.entitlements"; sourceTree = "<group>"; };
 		568DFB2420A9E1B3001E36C8 /* CreateAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountViewController.swift; sourceTree = "<group>"; };
 		569877B320B9FF3D003C80BF /* Menu.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Menu.xib; sourceTree = "<group>"; };
@@ -176,6 +178,7 @@
 			isa = PBXGroup;
 			children = (
 				568DFB2320A9E039001E36C8 /* News App.entitlements */,
+				568C368F212CED4F0089105C /* ProgressViewController.swift */,
 				569C5A2B21134DB200E43EF4 /* SavedTableViewController.swift */,
 				56BBD92D20A9F04000C69FC9 /* FeedTableViewController.swift */,
 				56BBD93120A9FB0B00C69FC9 /* ArticleTableViewCell.swift */,
@@ -513,7 +516,7 @@
 				"${BUILT_PRODUCTS_DIR}/DGElasticPullToRefresh/DGElasticPullToRefresh.framework",
 				"${BUILT_PRODUCTS_DIR}/FeedKit/FeedKit.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
-				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
 				"${BUILT_PRODUCTS_DIR}/HamburgerButton/HamburgerButton.framework",
 				"${BUILT_PRODUCTS_DIR}/HamburgerMenu/HamburgerMenu.framework",
 				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
@@ -534,7 +537,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DGElasticPullToRefresh.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FeedKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/HamburgerButton.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/HamburgerMenu.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
@@ -611,6 +614,7 @@
 				56BBD93020A9F5F700C69FC9 /* Article.swift in Sources */,
 				56BBD92A20A9EA6500C69FC9 /* LoginViewController.swift in Sources */,
 				569877B820B9FFFB003C80BF /* Menu.swift in Sources */,
+				568C3690212CED4F0089105C /* ProgressViewController.swift in Sources */,
 				569C5A2C21134DB200E43EF4 /* SavedTableViewController.swift in Sources */,
 				56BBD92E20A9F04000C69FC9 /* FeedTableViewController.swift in Sources */,
 				568DFB2520A9E1B3001E36C8 /* CreateAccountViewController.swift in Sources */,
@@ -795,6 +799,7 @@
 				DEVELOPMENT_TEAM = S8Q5H44YQD;
 				INFOPLIST_FILE = "News App/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				"LD_RUNPATH_SEARCH_PATHS[arch=*]" = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Vecchiato.News-App";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;

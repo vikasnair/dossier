@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -374,16 +375,16 @@ Garante per la protezione dei dati personali  Piazza di Monte Citorio, 1210018
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="NPP-sk-YVY">
-                                            <rect key="frame" x="20" y="27" width="305" height="45.5"/>
+                                            <rect key="frame" x="20" y="27" width="311" height="45.5"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="TopLeft" horizontalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mMe-V5-vJE">
-                                                    <rect key="frame" x="0.0" y="0.0" width="305" height="24"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="311" height="24"/>
                                                     <fontDescription key="fontDescription" name="DINCondensed-Bold" family="DIN Condensed" pointSize="24"/>
                                                     <color key="textColor" red="0.086274509799999996" green="0.094117647060000004" blue="0.19215686269999999" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <stackView opaque="NO" contentMode="scaleToFill" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="pUj-6y-3GE">
-                                                    <rect key="frame" x="0.0" y="28" width="305" height="17.5"/>
+                                                    <rect key="frame" x="0.0" y="28" width="311" height="17.5"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d0I-Ss-rWk">
                                                             <rect key="frame" x="0.0" y="0.0" width="35" height="17.5"/>
@@ -392,7 +393,7 @@ Garante per la protezione dei dati personali  Piazza di Monte Citorio, 1210018
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vfs-co-sK2">
-                                                            <rect key="frame" x="38" y="0.0" width="267" height="17.5"/>
+                                                            <rect key="frame" x="38" y="0.0" width="273" height="17.5"/>
                                                             <fontDescription key="fontDescription" name="DINAlternate-Bold" family="DIN Alternate" pointSize="15"/>
                                                             <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
@@ -401,24 +402,41 @@ Garante per la protezione dei dati personali  Piazza di Monte Citorio, 1210018
                                                 </stackView>
                                             </subviews>
                                         </stackView>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DrG-Ax-eby">
-                                            <rect key="frame" x="335" y="39" width="30" height="22"/>
-                                            <constraints>
-                                                <constraint firstAttribute="width" constant="30" id="5xY-Uj-SA0"/>
-                                            </constraints>
-                                            <state key="normal" image="read"/>
-                                            <state key="selected" image="read_selected"/>
-                                            <state key="highlighted" image="read_selected"/>
-                                            <connections>
-                                                <action selector="saveArticle:" destination="XOr-6l-o2o" eventType="touchUpInside" id="jFa-1T-vbc"/>
-                                            </connections>
-                                        </button>
+                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="IDu-d9-q4L">
+                                            <rect key="frame" x="341" y="18" width="24" height="64"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DrG-Ax-eby">
+                                                    <rect key="frame" x="0.0" y="0.0" width="24" height="24"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="24" id="5xY-Uj-SA0"/>
+                                                        <constraint firstAttribute="width" secondItem="DrG-Ax-eby" secondAttribute="height" multiplier="1:1" id="uLp-t4-1RE"/>
+                                                    </constraints>
+                                                    <state key="normal" image="read"/>
+                                                    <state key="selected" image="read_selected"/>
+                                                    <state key="highlighted" image="read_selected"/>
+                                                    <connections>
+                                                        <action selector="saveArticle:" destination="XOr-6l-o2o" eventType="touchUpInside" id="jFa-1T-vbc"/>
+                                                    </connections>
+                                                </button>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kID-iT-8qo">
+                                                    <rect key="frame" x="0.0" y="40" width="24" height="24"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="24" id="RFp-sS-9Po"/>
+                                                        <constraint firstAttribute="width" secondItem="kID-iT-8qo" secondAttribute="height" multiplier="1:1" id="XGy-GQ-dMV"/>
+                                                    </constraints>
+                                                    <state key="normal" image="safari"/>
+                                                    <connections>
+                                                        <action selector="openInSafari:" destination="XOr-6l-o2o" eventType="touchUpInside" id="zAp-CG-sad"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                        </stackView>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="DrG-Ax-eby" firstAttribute="leading" secondItem="NPP-sk-YVY" secondAttribute="trailing" constant="10" id="2FK-Ju-GKN"/>
-                                        <constraint firstAttribute="trailing" secondItem="DrG-Ax-eby" secondAttribute="trailing" constant="10" id="8fH-Zl-mD8"/>
+                                        <constraint firstAttribute="trailing" secondItem="IDu-d9-q4L" secondAttribute="trailing" constant="10" id="E6r-AN-0IP"/>
                                         <constraint firstItem="NPP-sk-YVY" firstAttribute="centerY" secondItem="dY4-IG-qNb" secondAttribute="centerY" id="Odj-E1-dLv"/>
-                                        <constraint firstItem="DrG-Ax-eby" firstAttribute="centerY" secondItem="dY4-IG-qNb" secondAttribute="centerY" id="qIt-0x-DtF"/>
+                                        <constraint firstItem="IDu-d9-q4L" firstAttribute="leading" secondItem="NPP-sk-YVY" secondAttribute="trailing" constant="10" id="hNe-cP-o19"/>
+                                        <constraint firstItem="IDu-d9-q4L" firstAttribute="centerY" secondItem="dY4-IG-qNb" secondAttribute="centerY" id="kWB-kA-CW6"/>
                                         <constraint firstItem="NPP-sk-YVY" firstAttribute="leading" secondItem="dY4-IG-qNb" secondAttribute="leading" constant="20" id="s92-DM-tD0"/>
                                     </constraints>
                                 </tableViewCellContentView>
@@ -817,16 +835,16 @@ Garante per la protezione dei dati personali  Piazza di Monte Citorio, 1210018
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="kDp-Eo-G8h">
-                                            <rect key="frame" x="20" y="27" width="345" height="45.5"/>
+                                            <rect key="frame" x="20" y="27" width="311" height="45.5"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="TopLeft" horizontalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dzr-3s-HnH">
-                                                    <rect key="frame" x="0.0" y="0.0" width="345" height="24"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="311" height="24"/>
                                                     <fontDescription key="fontDescription" name="DINCondensed-Bold" family="DIN Condensed" pointSize="24"/>
                                                     <color key="textColor" red="0.086274509799999996" green="0.094117647060000004" blue="0.19215686269999999" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <stackView opaque="NO" contentMode="scaleToFill" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="9H8-lO-FxI">
-                                                    <rect key="frame" x="0.0" y="28" width="345" height="17.5"/>
+                                                    <rect key="frame" x="0.0" y="28" width="311" height="17.5"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qKo-9F-Zyg">
                                                             <rect key="frame" x="0.0" y="0.0" width="35" height="17.5"/>
@@ -835,7 +853,7 @@ Garante per la protezione dei dati personali  Piazza di Monte Citorio, 1210018
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AzI-br-3pN">
-                                                            <rect key="frame" x="38" y="0.0" width="307" height="17.5"/>
+                                                            <rect key="frame" x="38" y="0.0" width="273" height="17.5"/>
                                                             <fontDescription key="fontDescription" name="DINAlternate-Bold" family="DIN Alternate" pointSize="15"/>
                                                             <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
@@ -844,11 +862,24 @@ Garante per la protezione dei dati personali  Piazza di Monte Citorio, 1210018
                                                 </stackView>
                                             </subviews>
                                         </stackView>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eXX-Z5-b28">
+                                            <rect key="frame" x="341" y="37" width="24" height="24"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="24" id="UwU-ta-NYF"/>
+                                                <constraint firstAttribute="width" secondItem="eXX-Z5-b28" secondAttribute="height" multiplier="1:1" id="Uxg-i0-MfQ"/>
+                                            </constraints>
+                                            <state key="normal" image="safari"/>
+                                            <connections>
+                                                <action selector="openInSafari:" destination="fhS-Qh-RKJ" eventType="touchUpInside" id="h29-n0-0bY"/>
+                                            </connections>
+                                        </button>
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="kDp-Eo-G8h" firstAttribute="leading" secondItem="qZa-1B-b1x" secondAttribute="leading" constant="20" id="0GL-Hv-fwv"/>
-                                        <constraint firstAttribute="trailing" secondItem="kDp-Eo-G8h" secondAttribute="trailing" constant="10" id="ehJ-0x-VtE"/>
+                                        <constraint firstAttribute="trailing" secondItem="eXX-Z5-b28" secondAttribute="trailing" constant="10" id="Ds5-FA-xBV"/>
+                                        <constraint firstItem="eXX-Z5-b28" firstAttribute="leading" secondItem="kDp-Eo-G8h" secondAttribute="trailing" constant="10" id="LPA-38-AB3"/>
                                         <constraint firstItem="kDp-Eo-G8h" firstAttribute="centerY" secondItem="qZa-1B-b1x" secondAttribute="centerY" id="fqh-tg-Bad"/>
+                                        <constraint firstItem="eXX-Z5-b28" firstAttribute="centerY" secondItem="qZa-1B-b1x" secondAttribute="centerY" id="hk0-za-Zm3"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
@@ -869,6 +900,98 @@ Garante per la protezione dei dati personali  Piazza di Monte Citorio, 1210018
             </objects>
             <point key="canvasLocation" x="4210" y="-905"/>
         </scene>
+        <!--Progress View Controller-->
+        <scene sceneID="YKG-Yq-tLF">
+            <objects>
+                <viewController storyboardIdentifier="ProgressViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="LEj-tJ-zgD" customClass="ProgressViewController" customModule="News_App" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="2Hq-xs-OHl">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="BLW-Qi-DMD">
+                                <rect key="frame" x="62" y="192" width="252.5" height="380"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="CeA-fL-Xgu">
+                                        <rect key="frame" x="0.0" y="0.0" width="252.5" height="100"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tLG-HG-Ku9">
+                                                <rect key="frame" x="113" y="0.0" width="27" height="72"/>
+                                                <fontDescription key="fontDescription" name="DINCondensed-Bold" family="DIN Condensed" pointSize="72"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Articoli letti questa settimana" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="08L-03-F6U">
+                                                <rect key="frame" x="0.0" y="72" width="252.5" height="28"/>
+                                                <fontDescription key="fontDescription" name="DINCondensed-Bold" family="DIN Condensed" pointSize="28"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="0ct-p4-FMV">
+                                        <rect key="frame" x="0.0" y="140" width="252.5" height="100"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bxz-GC-Trt">
+                                                <rect key="frame" x="113" y="0.0" width="27" height="72"/>
+                                                <fontDescription key="fontDescription" name="DINCondensed-Bold" family="DIN Condensed" pointSize="72"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Articoli letti in totale" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mzn-dQ-I1V">
+                                                <rect key="frame" x="40" y="72" width="173" height="28"/>
+                                                <fontDescription key="fontDescription" name="DINCondensed-Bold" family="DIN Condensed" pointSize="28"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="VF3-5e-dho">
+                                        <rect key="frame" x="0.0" y="280" width="252.5" height="100"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Fc-mC-TlH">
+                                                <rect key="frame" x="113" y="0.0" width="27" height="72"/>
+                                                <fontDescription key="fontDescription" name="DINCondensed-Bold" family="DIN Condensed" pointSize="72"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Minuti spesi leggendo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MMq-1j-qD4">
+                                                <rect key="frame" x="31.5" y="72" width="190" height="28"/>
+                                                <fontDescription key="fontDescription" name="DINCondensed-Bold" family="DIN Condensed" pointSize="28"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="La tua performance" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YLn-n0-poD">
+                                <rect key="frame" x="41.5" y="104" width="292" height="48"/>
+                                <fontDescription key="fontDescription" name="DINCondensed-Bold" family="DIN Condensed" pointSize="48"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.086274509803921567" green="0.098039215686274508" blue="0.18431372549019609" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="YLn-n0-poD" firstAttribute="top" secondItem="Viq-IT-dZ0" secondAttribute="top" constant="40" id="7ir-vR-PjV"/>
+                            <constraint firstItem="BLW-Qi-DMD" firstAttribute="centerX" secondItem="Viq-IT-dZ0" secondAttribute="centerX" id="NHY-JT-KT9"/>
+                            <constraint firstItem="YLn-n0-poD" firstAttribute="centerX" secondItem="Viq-IT-dZ0" secondAttribute="centerX" id="bO6-du-9EM"/>
+                            <constraint firstItem="Viq-IT-dZ0" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="BLW-Qi-DMD" secondAttribute="bottom" constant="10" id="kgT-1C-j9a"/>
+                            <constraint firstItem="BLW-Qi-DMD" firstAttribute="top" secondItem="YLn-n0-poD" secondAttribute="bottom" constant="40" id="xoj-eN-yHS"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Viq-IT-dZ0"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="CdL-Gv-oqK"/>
+                    <connections>
+                        <outlet property="totalReadLabel" destination="Bxz-GC-Trt" id="k2u-9M-HCX"/>
+                        <outlet property="totalReadTimeLabel" destination="2Fc-mC-TlH" id="Eq4-xG-Bw6"/>
+                        <outlet property="weeklyReadLabel" destination="tLG-HG-Ku9" id="baY-Qt-XQv"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RBI-He-ztC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5124" y="-905"/>
+        </scene>
         <!--Item-->
         <scene sceneID="vnf-Qg-abW">
             <objects>
@@ -888,9 +1011,28 @@ Garante per la protezione dei dati personali  Piazza di Monte Citorio, 1210018
             </objects>
             <point key="canvasLocation" x="4210" y="-1638"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="22N-4v-e5E">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="k1n-tt-UHv" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="DHk-cp-PMx">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="LEj-tJ-zgD" kind="relationship" relationship="rootViewController" id="FGr-Ys-HRn"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Den-bU-EOn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5124" y="-1639"/>
+        </scene>
     </scenes>
     <resources>
-        <image name="read" width="16" height="16"/>
+        <image name="read" width="33" height="33"/>
         <image name="read_selected" width="16" height="16"/>
+        <image name="safari" width="32" height="32"/>
     </resources>
 </document>

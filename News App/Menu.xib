@@ -17,7 +17,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="psy-Ve-IwT">
-                    <rect key="frame" x="40" y="90" width="52" height="30"/>
+                    <rect key="frame" x="40" y="140" width="52" height="30"/>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                     <state key="normal" title="Logout">
                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -27,19 +27,29 @@
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UpG-Ez-YlY">
-                    <rect key="frame" x="40" y="140" width="111" height="30"/>
+                    <rect key="frame" x="40" y="190" width="116" height="30"/>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                    <state key="normal" title="Delete account">
+                    <state key="normal" title="Elimina account">
                         <color key="titleColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </state>
                     <connections>
                         <action selector="deleteAccount:" destination="iN0-l3-epB" eventType="touchUpInside" id="kLj-AC-7xK"/>
                     </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eDX-bv-GF7">
-                    <rect key="frame" x="40" y="40" width="45" height="30"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lsu-ID-fFX">
+                    <rect key="frame" x="40" y="40" width="75" height="30"/>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                    <state key="normal" title="Saved">
+                    <state key="normal" title="Progresso">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                    <connections>
+                        <action selector="showProgress:" destination="iN0-l3-epB" eventType="touchUpInside" id="a5t-rd-5bR"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eDX-bv-GF7">
+                    <rect key="frame" x="40" y="90" width="50" height="30"/>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                    <state key="normal" title="Salvati">
                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </state>
                     <connections>
@@ -50,10 +60,12 @@
             <color key="backgroundColor" red="0.088898606598377228" green="0.095504499971866608" blue="0.18432241678237915" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
             <constraints>
                 <constraint firstItem="eDX-bv-GF7" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="40" id="1cq-qF-nLW"/>
+                <constraint firstItem="Lsu-ID-fFX" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="20" id="EHs-Os-kbh"/>
                 <constraint firstItem="psy-Ve-IwT" firstAttribute="top" secondItem="eDX-bv-GF7" secondAttribute="bottom" constant="20" id="GwP-OF-vnM"/>
+                <constraint firstItem="eDX-bv-GF7" firstAttribute="top" secondItem="Lsu-ID-fFX" secondAttribute="bottom" constant="20" id="HtB-Gd-Pko"/>
+                <constraint firstItem="Lsu-ID-fFX" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="40" id="WcY-u1-13V"/>
                 <constraint firstItem="psy-Ve-IwT" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="40" id="hby-vA-gK1"/>
                 <constraint firstItem="UpG-Ez-YlY" firstAttribute="top" secondItem="psy-Ve-IwT" secondAttribute="bottom" constant="20" id="jey-Hj-16h"/>
-                <constraint firstItem="eDX-bv-GF7" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="20" id="lsQ-bw-5UP"/>
                 <constraint firstItem="UpG-Ez-YlY" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="40" id="twr-Dk-SGg"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>

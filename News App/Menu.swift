@@ -18,6 +18,11 @@ class Menu: MenuView {
 
     // MARK: Actions
     
+    @IBAction func showProgress(_ sender: Any) {
+        self.toggle(animated: true)
+        NotificationCenter.default.post(name: Notification.Name("showProgress"), object: nil)
+    }
+    
     @IBAction func showSaved(_ sender: Any) {
         self.toggle(animated: true)
         NotificationCenter.default.post(name: Notification.Name("showSaved"), object: nil)
@@ -63,7 +68,7 @@ class Menu: MenuView {
                         errorAlert.dismiss(animated: true, completion: nil)
                     }))
                     
-                    self.viewController()?.present(errorAlert, animated: true, completion: nil)
+                    self.viewContainingController()?.present(errorAlert, animated: true, completion: nil)
                     errorAlert.view.tintColor = APP_COLOR
                     
                     return
@@ -74,7 +79,7 @@ class Menu: MenuView {
             })
         }))
         
-        self.viewController()?.present(alert, animated: true, completion: nil)
+        self.viewContainingController()?.present(alert, animated: true, completion: nil)
         
         alert.view.tintColor = APP_COLOR
     }

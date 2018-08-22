@@ -28,7 +28,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         FirebaseApp.configure()
         
-        let keyboardManager = IQKeyboardManager.sharedManager()
+        let keyboardManager = IQKeyboardManager.shared
         keyboardManager.enable = true
         keyboardManager.shouldResignOnTouchOutside = true
         keyboardManager.keyboardDistanceFromTextField = 50

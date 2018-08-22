@@ -216,6 +216,8 @@ const distribute = (one: Article[], another: Article[], distribution: string) =>
 
 // MARK: HTTPS functions
 
+// POST
+
 exports.markArticles = functions.https.onRequest((req, res) => {
 	const token: string = req.get('Authorization').split('Bearer ')[1];
 	const userID: string = req.query.userID;
@@ -323,24 +325,26 @@ exports.saveArticle = functions.https.onRequest((req, res) => {
 			return res.send(error);
 		});
 	});
+});
 
-	// return Promise.all([auth(token), userRef.get()]).then(results => {
-	// 	const decoded: admin.auth.DecodedIdToken = results[0];
-	// 	const userSnapshot: FirebaseFirestore.DocumentSnapshot = results[1];
-	// 	const user: any = userSnapshot.data();
-	// 	const saved: [any] = user['saved'];
-	// 	saved.push(
-	// 			{
-	// 				source: article.source,
-	// 				title: article.title,
-	// 				url: article.url,
-	// 				category: article.category,
-	// 				date: article.date
-	// 			}
-	// 		);
+// GET
 
-	// 	return userRef.update({ 'saved' : saved });
-	// })
+exports.sendArticlesToUser = functions.https.onRequest((req, res) => {
+	const token: string = req.get('Authorization').split('Bearer ')[1];
+	const distribution: string = req.query.distribution;
+
+	return Promise.all([auth(token), getFeeds(hard), getFeeds(soft)]).then(results => {
+		const decoded: admin.auth.DecodedIdToken = results[0];
+		const hardFeed: Article[] = getArticlesFrom(filtered(results[1].filter((feed: any) => feed.items)), 'hard');
+		const softFeed: Article[] = getArticlesFrom(filtered(results[2].filter((feed: any) => feed.items)), 'soft');
+		const distributed: Article[] = distribute(hardFeed, softFeed, distribution);
+		
+		res.setHeader('Content-Type', 'application/json');
+		return res.status(200).send(JSON.stringify(distributed));
+	}).catch(error => {
+		console.log(error);
+		return res.send(error);
+	});
 });
 
 exports.getSaved = functions.https.onRequest((req, res) => {
@@ -362,18 +366,43 @@ exports.getSaved = functions.https.onRequest((req, res) => {
 	});
 });
 
-exports.sendArticlesToUser = functions.https.onRequest((req, res) => {
+exports.getProgress = functions.https.onRequest((req, res) => {
 	const token: string = req.get('Authorization').split('Bearer ')[1];
-	const distribution: string = req.query.distribution;
+	const userID: string = req.query.userID;
+	const userRef: FirebaseFirestore.DocumentReference = db.collection('users').doc(userID);
 
-	return Promise.all([auth(token), getFeeds(hard), getFeeds(soft)]).then(results => {
+	return Promise.all([auth(token), userRef.get()]).then(results => {
 		const decoded: admin.auth.DecodedIdToken = results[0];
-		const hardFeed: Article[] = getArticlesFrom(filtered(results[1].filter((feed: any) => feed.items)), 'hard');
-		const softFeed: Article[] = getArticlesFrom(filtered(results[2].filter((feed: any) => feed.items)), 'soft');
-		const distributed: Article[] = distribute(hardFeed, softFeed, distribution);
-		
-		res.setHeader('Content-Type', 'application/json');
-		return res.status(200).send(JSON.stringify(distributed));
+		const userSnapshot: FirebaseFirestore.DocumentSnapshot = results[1];
+		const user: any = userSnapshot.data();
+		const read: any = user['read'];
+
+		if (!read) {
+			return res.status(200).send([0, 0, 0]);
+		}
+
+		const articleIDs: string[] = Object.keys(read);
+		const totalReadCount: number = articleIDs.length;
+		let weeklyReadCount: number = 0;
+		let totalReadTime: number = 0;
+
+		articleIDs.forEach(id => {
+			const readDate: Date = new Date(read[id]['readDate']);
+			const today: Date = new Date()
+			const dayDifference: number = Math.ceil(
+				Math.abs(today.getTime() - readDate.getTime())
+			) / (1000 * 3600 * 24);
+
+			if (dayDifference <= 7) {
+				weeklyReadCount++;
+			}
+
+			const readTime: number = read[id]['readTime'];
+			totalReadTime += readTime;
+		});
+
+		totalReadTime = Math.ceil(totalReadTime / 60);
+		return res.status(200).send([totalReadCount, weeklyReadCount, totalReadTime]);
 	}).catch(error => {
 		console.log(error);
 		return res.send(error);

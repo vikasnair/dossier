@@ -39,6 +39,7 @@ class FeedTableViewController: UITableViewController, SFSafariViewControllerDele
         
         NotificationCenter.default.addObserver(self, selector: #selector(logHours(notification:)), name: Notification.Name.init("logHours"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(showSaved), name: Notification.Name.init("showSaved"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(showProgress), name: Notification.Name.init("showProgress"), object: nil)
         
         agreeToTerms()
 
@@ -735,6 +736,11 @@ class FeedTableViewController: UITableViewController, SFSafariViewControllerDele
                 print("error in getweather: \(error)")
             }
         }
+    }
+    
+    @objc func showProgress() {
+        guard let vc = storyboard?.instantiateViewController(withIdentifier: "ProgressViewController") as? ProgressViewController else { return }
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     @objc func showSaved() {

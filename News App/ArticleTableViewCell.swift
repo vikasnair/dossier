@@ -31,7 +31,11 @@ class ArticleTableViewCell: UITableViewCell {
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
     }
-
+    
+    @IBAction func openInSafari(_ sender: Any) {
+        UIApplication.shared.open(self.article.url, options: [:], completionHandler: nil)
+    }
+    
     @IBAction func saveArticle(_ sender: Any) {
         Auth.auth().currentUser?.getIDToken(completion: { (token, error) in
             guard error == nil, token != nil else { return }
