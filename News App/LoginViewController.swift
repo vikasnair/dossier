@@ -67,7 +67,7 @@ class LoginViewController: UIViewController {
             emailField.isHidden = false
             passwordField.isEnabled = true
             passwordField.isHidden = false
-            switchButton.setTitle("Continue with mobile", for: .normal)
+            switchButton.setTitle("Continua con cellulare", for: .normal)
         } else {
             emailField.text = nil
             emailField.isEnabled = false
@@ -77,7 +77,7 @@ class LoginViewController: UIViewController {
             passwordField.isHidden = true
             phoneField.isEnabled = true
             phoneField.isHidden = false
-            switchButton.setTitle("Continue with email", for: .normal)
+            switchButton.setTitle("Continua con email", for: .normal)
         }
     }
     // MARK: Functions
@@ -138,7 +138,7 @@ class LoginViewController: UIViewController {
     }
 
     func setupUI() {
-        formatTextField(phoneField, placeholder: "Mobile")
+        formatTextField(phoneField, placeholder: "Cellulare")
         formatTextField(emailField, placeholder: "Email")
         formatTextField(passwordField, placeholder: "Password")
         

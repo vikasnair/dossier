@@ -75,7 +75,7 @@ class CreateAccountViewController: UIViewController {
             emailField.isHidden = false
             passwordField.isEnabled = true
             passwordField.isHidden = false
-            switchButton.setTitle("Continue with mobile", for: .normal)
+            switchButton.setTitle("Continua con cellulare", for: .normal)
         } else {
             emailField.text = nil
             emailField.isEnabled = false
@@ -85,21 +85,43 @@ class CreateAccountViewController: UIViewController {
             passwordField.isHidden = true
             phoneField.isEnabled = true
             phoneField.isHidden = false
-            switchButton.setTitle("Continue with email", for: .normal)
+            switchButton.setTitle("Continua con email", for: .normal)
         }
     }
     
     // MARK: Functions
     
-    func createUser(_ name: String) -> Bool {
-        guard let userID = Auth.auth().currentUser?.uid else { return false }
+    func randomDistribution() -> String {
+        return ["placebo", "even", "hard", "soft"][Int(arc4random_uniform(UInt32(4)))]
+    }
+    
+    func getDistributionAndCreate(user: String) {
+        let alert = UIAlertController(title: "Che cosa ti interessa di più?", message: "Benvenuto! Per fornirti il servizio migliore vorremmo sapere che cosa ti interessa di più tra.", preferredStyle: .alert)
         
-        let distribution = ["placebo", "even", "hard", "soft"][Int(arc4random_uniform(UInt32(4)))]
+        alert.addAction(UIAlertAction(title: "Politica/Spettacolo/Cultura", style: .default, handler: { (action: UIAlertAction!) in
+            alert.dismiss(animated: true, completion: nil)
+            let distribution = Int(arc4random_uniform(UInt32(2))) == 1 ? "soft" : self.randomDistribution()
+            self.createUser(user, distribution: distribution, choice: "soft")
+        }))
+        
+        alert.addAction(UIAlertAction(title: "Politica/Dal Mondo/Cultura", style: .default, handler: { (action: UIAlertAction!) in
+            alert.dismiss(animated: true, completion: nil)
+            let distribution = Int(arc4random_uniform(UInt32(2))) == 1 ? "hard" : self.randomDistribution()
+            self.createUser(user, distribution: distribution, choice: "hard")
+        }))
+        
+        self.present(alert, animated: true, completion: nil)
+        alert.view.tintColor = APP_COLOR
+    }
+    
+    func createUser(_ name: String, distribution: String, choice: String) {
+        guard let userID = Auth.auth().currentUser?.uid else { return }
         
         let db = Firestore.firestore()
         db.collection("users").document(userID).setData([
             "name" : name,
             "distribution" : distribution,
+            "choice" : choice,
             "polled" : false,
             "polledAgain" : false,
             "allowPrompts": true,
@@ -107,23 +129,18 @@ class CreateAccountViewController: UIViewController {
             "dateCreated" : Date()
         ])
         
-        return true
+        self.createAccountButton.stopAnimation(animationStyle: .expand, revertAfterDelay: 1, completion: nil)
     }
     
     func signInWithCredential(_ credential: AuthCredential) {
         Auth.auth().signIn(with: credential, completion: { (user, error) in
-            guard error == nil, user != nil, self.createUser(self.nameField.text!) else {
-                user!.delete(completion: { (error) in
-                    if error != nil { print("how did it fuck up this badly") }
-                    else { print("user deleted") }
-                })
-                
+            guard error == nil, user != nil else {
                 self.createAccountButton.stopAnimation(animationStyle: .shake, revertAfterDelay: 1, completion: nil)
                 print("error in sign up w phone \(error!)")
                 return
             }
             
-            self.createAccountButton.stopAnimation(animationStyle: .expand, revertAfterDelay: 1, completion: nil)
+            self.getDistributionAndCreate(user: self.nameField.text!)
             print("signed up with phone")
         })
     }
@@ -158,27 +175,22 @@ class CreateAccountViewController: UIViewController {
     
     func signUpWithEmail(_ email: String, _ password: String) {
         Auth.auth().createUser(withEmail: email, password: password) { (result, error) in
-            guard error == nil, result != nil, self.createUser(self.nameField.text!) else {
-                result!.user.delete(completion: { (error) in
-                    if error != nil { print("how did it fuck up this badly") }
-                    else { print("user deleted") }
-                })
-                
+            guard error == nil, result != nil else {
                 self.createAccountButton.stopAnimation(animationStyle: .shake, revertAfterDelay: 1, completion: nil)
                 print("error in signup: \(String(describing: error))")
                 return
             }
             
-            self.createAccountButton.stopAnimation(animationStyle: .expand, revertAfterDelay: 1, completion: nil)
+            self.getDistributionAndCreate(user: self.nameField.text!)
             print("signed up with email")
         }
     }
     
     func setupUI() {
-        formatTextField(nameField, placeholder: "Name")
+        formatTextField(nameField, placeholder: "Nome")
         formatTextField(emailField, placeholder: "Email")
         formatTextField(passwordField, placeholder: "Password")
-        formatTextField(phoneField, placeholder: "Mobile")
+        formatTextField(phoneField, placeholder: "Cellulare")
         
         emailField.isEnabled = false
         emailField.isHidden = true

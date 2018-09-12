@@ -48,15 +48,18 @@ class AuthViewController: UIViewController {
                 print(user!.uid)
                 
                 self.db.collection("users").document(user!.uid).getDocument(completion: { (document, error) in
-                    guard error == nil, let document = document, document.exists else {
+                    guard error == nil else {
                         self.signOut()
-                        return user!.delete(completion: { (error) in
-                            guard error != nil else { return print("how did it fuck up this badly" )}
-                            print("user deleted")
-                        })
+                        return
                     }
-
-                    self.enterApp()
+                    
+                    if !(document != nil && document!.exists) {
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
+                            self.autoLogin()
+                        })
+                    } else {
+                        self.enterApp()
+                    }
                 })
             } else {
                 print("User is NOT signed in.")

@@ -467,9 +467,9 @@ Garante per la protezione dei dati personali  Piazza di Monte Citorio, 1210018
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Nt-RA-81s">
-                                <rect key="frame" x="121" y="557" width="134" height="30"/>
+                                <rect key="frame" x="128" y="557" width="120" height="30"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="Create an account">
+                                <state key="normal" title="Crea un account">
                                     <color key="titleColor" red="0.086274509799999996" green="0.094117647060000004" blue="0.19215686269999999" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
@@ -477,9 +477,9 @@ Garante per la protezione dei dati personali  Piazza di Monte Citorio, 1210018
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yng-U4-idX">
-                                <rect key="frame" x="167" y="597" width="41" height="30"/>
+                                <rect key="frame" x="157" y="597" width="62" height="30"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="Login">
+                                <state key="normal" title="Accesso">
                                     <color key="titleColor" red="0.086274509799999996" green="0.094117647060000004" blue="0.19215686269999999" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
@@ -520,7 +520,7 @@ Garante per la protezione dei dati personali  Piazza di Monte Citorio, 1210018
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Mobile" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9Gl-jh-cBU" userLabel="Phone" customClass="PhoneNumberTextField" customModule="PhoneNumberKit">
+                            <textField opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Cellulare" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9Gl-jh-cBU" userLabel="Phone" customClass="PhoneNumberTextField" customModule="PhoneNumberKit">
                                 <rect key="frame" x="30" y="235.5" width="305.5" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="9Z7-ZR-u1t"/>
@@ -529,7 +529,7 @@ Garante per la protezione dei dati personali  Piazza di Monte Citorio, 1210018
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
                                 <textInputTraits key="textInputTraits" returnKeyType="next" enablesReturnKeyAutomatically="YES"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="d9c-X1-RgZ">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Nome" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="d9c-X1-RgZ">
                                 <rect key="frame" x="30" y="165.5" width="305" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="j5I-ZJ-hDn"/>
@@ -538,7 +538,7 @@ Garante per la protezione dei dati personali  Piazza di Monte Citorio, 1210018
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
                                 <textInputTraits key="textInputTraits" returnKeyType="next" enablesReturnKeyAutomatically="YES"/>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Create an account." textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Oi5-Ad-1uS">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Crea un account" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Oi5-Ad-1uS">
                                 <rect key="frame" x="40" y="84" width="295" height="42"/>
                                 <fontDescription key="fontDescription" name="DINCondensed-Bold" family="DIN Condensed" pointSize="42"/>
                                 <color key="textColor" red="0.086274509799999996" green="0.094117647060000004" blue="0.19215686269999999" alpha="1" colorSpace="calibratedRGB"/>
@@ -569,7 +569,7 @@ Garante per la protezione dei dati personali  Piazza di Monte Citorio, 1210018
                                     <constraint firstAttribute="width" constant="180" id="tl4-tW-tDR"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
-                                <state key="normal" title="Continue with email">
+                                <state key="normal" title="Continua con email">
                                     <color key="titleColor" red="0.086274509799999996" green="0.094117647060000004" blue="0.19215686269999999" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
@@ -582,7 +582,7 @@ Garante per la protezione dei dati personali  Piazza di Monte Citorio, 1210018
                                     <constraint firstAttribute="height" constant="50" id="Qxs-D4-NeM"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="Create account.">
+                                <state key="normal" title="Crea un account">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
@@ -639,7 +639,7 @@ Garante per la protezione dei dati personali  Piazza di Monte Citorio, 1210018
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Mobile" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cmV-yk-z0B" userLabel="Phone" customClass="PhoneNumberTextField" customModule="PhoneNumberKit">
+                            <textField opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Cellulare" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cmV-yk-z0B" userLabel="Phone" customClass="PhoneNumberTextField" customModule="PhoneNumberKit">
                                 <rect key="frame" x="30" y="166" width="305" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="aEB-7v-mJj"/>
@@ -648,7 +648,7 @@ Garante per la protezione dei dati personali  Piazza di Monte Citorio, 1210018
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
                                 <textInputTraits key="textInputTraits" returnKeyType="next" enablesReturnKeyAutomatically="YES"/>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Login." textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yjs-cS-cBo">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Accesso" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yjs-cS-cBo">
                                 <rect key="frame" x="40" y="84" width="295" height="42"/>
                                 <fontDescription key="fontDescription" name="DINCondensed-Bold" family="DIN Condensed" pointSize="42"/>
                                 <color key="textColor" red="0.086274509799999996" green="0.094117647060000004" blue="0.19215686269999999" alpha="1" colorSpace="calibratedRGB"/>
@@ -679,7 +679,7 @@ Garante per la protezione dei dati personali  Piazza di Monte Citorio, 1210018
                                     <constraint firstAttribute="width" constant="180" id="kof-7c-Jb0"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                <state key="normal" title="Continue with email">
+                                <state key="normal" title="Continua con email">
                                     <color key="titleColor" red="0.086274509799999996" green="0.094117647060000004" blue="0.19215686269999999" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
@@ -693,7 +693,7 @@ Garante per la protezione dei dati personali  Piazza di Monte Citorio, 1210018
                                     <constraint firstAttribute="height" constant="50" id="2BU-e4-dKA"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="Login">
+                                <state key="normal" title="Accesso">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
