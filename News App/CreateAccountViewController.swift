@@ -95,33 +95,14 @@ class CreateAccountViewController: UIViewController {
         return ["placebo", "even", "hard", "soft"][Int(arc4random_uniform(UInt32(4)))]
     }
     
-    func getDistributionAndCreate(user: String) {
-        let alert = UIAlertController(title: "Che cosa ti interessa di più?", message: "Benvenuto! Per fornirti il servizio migliore vorremmo sapere che cosa ti interessa di più tra.", preferredStyle: .alert)
-        
-        alert.addAction(UIAlertAction(title: "Politica/Spettacolo/Cultura", style: .default, handler: { (action: UIAlertAction!) in
-            alert.dismiss(animated: true, completion: nil)
-            let distribution = Int(arc4random_uniform(UInt32(2))) == 1 ? "soft" : self.randomDistribution()
-            self.createUser(user, distribution: distribution, choice: "soft")
-        }))
-        
-        alert.addAction(UIAlertAction(title: "Politica/Dal Mondo/Cultura", style: .default, handler: { (action: UIAlertAction!) in
-            alert.dismiss(animated: true, completion: nil)
-            let distribution = Int(arc4random_uniform(UInt32(2))) == 1 ? "hard" : self.randomDistribution()
-            self.createUser(user, distribution: distribution, choice: "hard")
-        }))
-        
-        self.present(alert, animated: true, completion: nil)
-        alert.view.tintColor = APP_COLOR
-    }
-    
-    func createUser(_ name: String, distribution: String, choice: String) {
+    func createUser(_ name: String) {
         guard let userID = Auth.auth().currentUser?.uid else { return }
         
         let db = Firestore.firestore()
         db.collection("users").document(userID).setData([
             "name" : name,
-            "distribution" : distribution,
-            "choice" : choice,
+            "distribution" : self.randomDistribution(),
+            "choice" : NSNull(),
             "polled" : false,
             "polledAgain" : false,
             "allowPrompts": true,
@@ -140,7 +121,7 @@ class CreateAccountViewController: UIViewController {
                 return
             }
             
-            self.getDistributionAndCreate(user: self.nameField.text!)
+            self.createUser(self.nameField.text!)
             print("signed up with phone")
         })
     }
@@ -181,12 +162,14 @@ class CreateAccountViewController: UIViewController {
                 return
             }
             
-            self.getDistributionAndCreate(user: self.nameField.text!)
+            self.createUser(self.nameField.text!)
             print("signed up with email")
         }
     }
     
     func setupUI() {
+        UIApplication.shared.statusBarStyle = .default
+        
         formatTextField(nameField, placeholder: "Nome")
         formatTextField(emailField, placeholder: "Email")
         formatTextField(passwordField, placeholder: "Password")

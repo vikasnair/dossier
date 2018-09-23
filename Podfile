@@ -17,6 +17,8 @@ target 'News App' do
   pod 'TransitionButton'
   pod 'DGElasticPullToRefresh'
   pod 'HamburgerMenu'
+  pod 'BEMCheckBox'
+  pod 'Pastel'
   
   target 'News AppTests' do
     inherit! :search_paths

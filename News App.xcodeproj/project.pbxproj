@@ -26,6 +26,7 @@
 		56BBD92E20A9F04000C69FC9 /* FeedTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56BBD92D20A9F04000C69FC9 /* FeedTableViewController.swift */; };
 		56BBD93020A9F5F700C69FC9 /* Article.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56BBD92F20A9F5F700C69FC9 /* Article.swift */; };
 		56BBD93220A9FB0B00C69FC9 /* ArticleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56BBD93120A9FB0B00C69FC9 /* ArticleTableViewCell.swift */; };
+		56C3C73021582EE400187A08 /* PreferencesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56C3C72F21582EE400187A08 /* PreferencesViewController.swift */; };
 		56C5A09120CEAE3F00AF9B31 /* ResearchKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56C5A08E20CEAE2200AF9B31 /* ResearchKit.framework */; };
 		56C5A09220CEAE3F00AF9B31 /* ResearchKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 56C5A08E20CEAE2200AF9B31 /* ResearchKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		973033646F8D5C74C27A6724 /* Pods_News_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8647006F1FF0E50C991D0515 /* Pods_News_App.framework */; };
@@ -113,6 +114,7 @@
 		56BBD92D20A9F04000C69FC9 /* FeedTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedTableViewController.swift; sourceTree = "<group>"; };
 		56BBD92F20A9F5F700C69FC9 /* Article.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Article.swift; sourceTree = "<group>"; };
 		56BBD93120A9FB0B00C69FC9 /* ArticleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleTableViewCell.swift; sourceTree = "<group>"; };
+		56C3C72F21582EE400187A08 /* PreferencesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesViewController.swift; sourceTree = "<group>"; };
 		56C5A08720CEAE2200AF9B31 /* ResearchKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ResearchKit.xcodeproj; path = ../ResearchKit/ResearchKit.xcodeproj; sourceTree = "<group>"; };
 		8647006F1FF0E50C991D0515 /* Pods_News_App.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_News_App.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9399B649728FD03D5639368D /* Pods_News_AppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_News_AppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -178,6 +180,8 @@
 			isa = PBXGroup;
 			children = (
 				568DFB2320A9E039001E36C8 /* News App.entitlements */,
+				56C3C72F21582EE400187A08 /* PreferencesViewController.swift */,
+				5608F4E4210629F500A67903 /* ToSViewController.swift */,
 				568C368F212CED4F0089105C /* ProgressViewController.swift */,
 				569C5A2B21134DB200E43EF4 /* SavedTableViewController.swift */,
 				56BBD92D20A9F04000C69FC9 /* FeedTableViewController.swift */,
@@ -188,7 +192,6 @@
 				56BBD92B20A9EBA100C69FC9 /* AuthViewController.swift */,
 				5686CE941FF6A7C400D611DB /* AppDelegate.swift */,
 				5686CE981FF6A7C400D611DB /* Main.storyboard */,
-				5608F4E4210629F500A67903 /* ToSViewController.swift */,
 				569877B320B9FF3D003C80BF /* Menu.xib */,
 				569877B720B9FFFB003C80BF /* Menu.swift */,
 				5686CE9B1FF6A7C400D611DB /* Assets.xcassets */,
@@ -512,6 +515,7 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-News App/Pods-News App-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/BEMCheckBox/BEMCheckBox.framework",
 				"${BUILT_PRODUCTS_DIR}/BoringSSL/openssl.framework",
 				"${BUILT_PRODUCTS_DIR}/DGElasticPullToRefresh/DGElasticPullToRefresh.framework",
 				"${BUILT_PRODUCTS_DIR}/FeedKit/FeedKit.framework",
@@ -520,6 +524,7 @@
 				"${BUILT_PRODUCTS_DIR}/HamburgerButton/HamburgerButton.framework",
 				"${BUILT_PRODUCTS_DIR}/HamburgerMenu/HamburgerMenu.framework",
 				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/Pastel/Pastel.framework",
 				"${BUILT_PRODUCTS_DIR}/PhoneNumberKit/PhoneNumberKit.framework",
 				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
 				"${BUILT_PRODUCTS_DIR}/TransitionButton/TransitionButton.framework",
@@ -533,6 +538,7 @@
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BEMCheckBox.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/openssl.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DGElasticPullToRefresh.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FeedKit.framework",
@@ -541,6 +547,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/HamburgerButton.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/HamburgerMenu.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Pastel.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PhoneNumberKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TransitionButton.framework",
@@ -622,6 +629,7 @@
 				56BBD93220A9FB0B00C69FC9 /* ArticleTableViewCell.swift in Sources */,
 				5686CE951FF6A7C400D611DB /* AppDelegate.swift in Sources */,
 				5608F4E5210629F500A67903 /* ToSViewController.swift in Sources */,
+				56C3C73021582EE400187A08 /* PreferencesViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

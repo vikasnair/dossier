@@ -91,7 +91,7 @@ class LoginViewController: UIViewController {
             }
             
             print("logged in with phone")
-            
+            UserDefaults.standard.set(true, forKey: "preferences")
             self.loginButton.stopAnimation(animationStyle: .expand, revertAfterDelay: 1, completion: nil)
         })
     }
@@ -132,12 +132,15 @@ class LoginViewController: UIViewController {
                 return
             }
             
+            UserDefaults.standard.set(true, forKey: "preferences")
             self.loginButton.stopAnimation(animationStyle: .expand, revertAfterDelay: 1, completion: nil)
             print("logged in with email")
         }
     }
 
     func setupUI() {
+        UIApplication.shared.statusBarStyle = .default
+        
         formatTextField(phoneField, placeholder: "Cellulare")
         formatTextField(emailField, placeholder: "Email")
         formatTextField(passwordField, placeholder: "Password")

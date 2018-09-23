@@ -32,6 +32,7 @@ class Menu: MenuView {
         UserDefaults.standard.removeObject(forKey: "feed")
         UserDefaults.standard.removeObject(forKey: "saved")
         UserDefaults.standard.removeObject(forKey: "ToS")
+        UserDefaults.standard.removeObject(forKey: "preferences")
         
         do {
             try Auth.auth().signOut()
@@ -57,6 +58,7 @@ class Menu: MenuView {
             UserDefaults.standard.removeObject(forKey: "feed")
             UserDefaults.standard.removeObject(forKey: "saved")
             UserDefaults.standard.removeObject(forKey: "ToS")
+            UserDefaults.standard.removeObject(forKey: "preferences")
             
             user.delete(completion: { (error) in
                 if error != nil {
@@ -83,13 +85,4 @@ class Menu: MenuView {
         
         alert.view.tintColor = APP_COLOR
     }
-    
-    /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
-    }
-    */
-
 }

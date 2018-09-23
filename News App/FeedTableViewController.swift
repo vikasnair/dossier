@@ -34,7 +34,7 @@ class FeedTableViewController: UITableViewController, SFSafariViewControllerDele
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         locationManager.delegate = self
         
         NotificationCenter.default.addObserver(self, selector: #selector(logHours(notification:)), name: Notification.Name.init("logHours"), object: nil)
@@ -45,6 +45,17 @@ class FeedTableViewController: UITableViewController, SFSafariViewControllerDele
 
         DispatchQueue.global(qos: .background).async {
             while !UserDefaults.standard.bool(forKey: "ToS") {}
+            
+            DispatchQueue.main.async {
+                if !UserDefaults.standard.bool(forKey: "preferences") {
+                    guard let preferencesVC = self.storyboard?.instantiateViewController(withIdentifier: "PreferencesViewController") else { return }
+                    self.present(preferencesVC, animated: true, completion: nil)
+                }
+            }
+        }
+        
+        DispatchQueue.global(qos: .background).async {
+            while !UserDefaults.standard.bool(forKey: "preferences") {}
             
             DispatchQueue.main.async {
                 if CLLocationManager.authorizationStatus() == .notDetermined {
@@ -168,7 +179,6 @@ class FeedTableViewController: UITableViewController, SFSafariViewControllerDele
     
     func markVisibleArticles() {
         guard let visibleRows = tableView.indexPathsForVisibleRows else { return }
-        
         var articlesToMark: [Article] = []
         
         for path in visibleRows {
@@ -199,12 +209,14 @@ class FeedTableViewController: UITableViewController, SFSafariViewControllerDele
         
         guard let distribution = distribution else {
             self.tableView.dg_stopLoading()
+            self.tableView.reloadData()
             return
         }
         
         Auth.auth().currentUser?.getIDToken(completion: { (token, error) in
             guard error == nil, token != nil else {
                 self.tableView.dg_stopLoading()
+                self.tableView.reloadData()
                 return
             }
             
@@ -218,6 +230,7 @@ class FeedTableViewController: UITableViewController, SFSafariViewControllerDele
                 guard response.error == nil, response.data != nil else {
                     print("error with alamofire response in getfeed: \(String(describing: response.error))")
                     self.tableView.dg_stopLoading()
+                    self.tableView.reloadData()
                     return
                 }
                 
@@ -227,6 +240,7 @@ class FeedTableViewController: UITableViewController, SFSafariViewControllerDele
                             DispatchQueue.main.async {
                                 print("failed to parse JSON")
                                 self.tableView.dg_stopLoading()
+                                self.tableView.reloadData()
                             }
                             
                             return
@@ -260,6 +274,7 @@ class FeedTableViewController: UITableViewController, SFSafariViewControllerDele
                     } catch {
                         print("error parsing json: \(String(describing: error))")
                         self.tableView.dg_stopLoading()
+                        self.tableView.reloadData()
                     }
                 }
             }
@@ -683,6 +698,12 @@ class FeedTableViewController: UITableViewController, SFSafariViewControllerDele
                 }
             } else if let stepResults = result.results as? [ORKScaleQuestionResult] {
                 if let answer = stepResults.first?.scaleAnswer {
+                    answers[result.identifier] = answer
+                } else {
+                    answers[result.identifier] = NSNull()
+                }
+            } else if let results = result.results as? [ORKNumericQuestionResult] {
+                if let answer = results.first?.numericAnswer {
                     answers[result.identifier] = answer
                 } else {
                     answers[result.identifier] = NSNull()

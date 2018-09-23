@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import Pastel
 
 class AuthViewController: UIViewController {
     
@@ -26,6 +27,7 @@ class AuthViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         autoLogin()
+        setupUI()
     }
     
     // MARK: Functions
@@ -71,10 +73,24 @@ class AuthViewController: UIViewController {
         do {
             UserDefaults.standard.removeObject(forKey: "feed")
             UserDefaults.standard.removeObject(forKey: "ToS")
+            UserDefaults.standard.removeObject(forKey: "preferences")
             try Auth.auth().signOut()
         } catch {
             print("error signing out: \(String(describing: error))")
         }
+    }
+    
+    func initializeGradient() {
+        let pastelView = PastelView(frame: view.bounds)
+        
+        pastelView.startPastelPoint = .bottomLeft
+        pastelView.endPastelPoint = .topRight
+        
+        pastelView.animationDuration = 3
+        pastelView.setColors([APP_COLOR, SECONDARY_COLOR, TERTIARY_COLOR, UIColor.white])
+        
+        pastelView.startAnimation()
+        view.insertSubview(pastelView, at: 0)
     }
     
     func setupUI() {
@@ -85,5 +101,9 @@ class AuthViewController: UIViewController {
         navigationBar.tintColor = APP_COLOR
         navigationBar.shadowImage = UIImage()
         navigationBar.isTranslucent = false
+        navigationBar.isHidden = true
+        
+        UIApplication.shared.statusBarStyle = .lightContent
+        initializeGradient()
     }
 }
