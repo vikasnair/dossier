@@ -97,11 +97,11 @@ class AuthViewController: UIViewController {
         guard let navigationBar = self.navigationController?.navigationBar else { return }
         
         navigationBar.titleTextAttributes = [NSAttributedStringKey.font: UIFont.systemFont(ofSize: 24, weight: UIFont.Weight.heavy), NSAttributedStringKey.foregroundColor: APP_COLOR]
-        navigationBar.barTintColor = .white
+//        navigationBar.barTintColor = .white
         navigationBar.tintColor = APP_COLOR
+        navigationBar.setBackgroundImage(UIImage(), for: .default)
         navigationBar.shadowImage = UIImage()
-        navigationBar.isTranslucent = false
-        navigationBar.isHidden = true
+        navigationBar.isTranslucent = true
         
         UIApplication.shared.statusBarStyle = .lightContent
         initializeGradient()

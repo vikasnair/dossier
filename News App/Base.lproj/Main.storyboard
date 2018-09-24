@@ -746,8 +746,8 @@ Garante per la protezione dei dati personali  Piazza di Monte Citorio, 1210018
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView autoresizesSubviews="NO" opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="iWT-13-vJC">
-                                <rect key="frame" x="30" y="233" width="116" height="265"/>
+                            <stackView autoresizesSubviews="NO" opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="iWT-13-vJC">
+                                <rect key="frame" x="30" y="273" width="116" height="185"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4d3-Dw-l8I">
                                         <rect key="frame" x="0.0" y="0.0" width="116" height="21"/>
@@ -783,7 +783,7 @@ Garante per la protezione dei dati personali  Piazza di Monte Citorio, 1210018
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kac-VV-yNE">
-                                        <rect key="frame" x="0.0" y="61" width="116" height="21"/>
+                                        <rect key="frame" x="0.0" y="41" width="116" height="21"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="a0d-AJ-ckH" customClass="BEMCheckBox">
                                                 <rect key="frame" x="0.0" y="0.0" width="40" height="21"/>
@@ -816,7 +816,7 @@ Garante per la protezione dei dati personali  Piazza di Monte Citorio, 1210018
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cW2-ar-0FT">
-                                        <rect key="frame" x="0.0" y="122" width="116" height="21"/>
+                                        <rect key="frame" x="0.0" y="82" width="116" height="21"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nn3-oM-hXe" customClass="BEMCheckBox">
                                                 <rect key="frame" x="0.0" y="0.0" width="40" height="21"/>
@@ -849,7 +849,7 @@ Garante per la protezione dei dati personali  Piazza di Monte Citorio, 1210018
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8B9-fc-cXw">
-                                        <rect key="frame" x="0.0" y="183" width="116" height="21"/>
+                                        <rect key="frame" x="0.0" y="123" width="116" height="21"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qaS-Ge-o7M" customClass="BEMCheckBox">
                                                 <rect key="frame" x="0.0" y="0.0" width="40" height="21"/>
@@ -882,7 +882,7 @@ Garante per la protezione dei dati personali  Piazza di Monte Citorio, 1210018
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zmo-rL-mE4">
-                                        <rect key="frame" x="0.0" y="244" width="116" height="21"/>
+                                        <rect key="frame" x="0.0" y="164" width="116" height="21"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bb9-B0-LcE" customClass="BEMCheckBox">
                                                 <rect key="frame" x="0.0" y="0.0" width="40" height="21"/>
