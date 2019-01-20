@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="LmE-Sw-9AW">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="LmE-Sw-9AW">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -467,7 +466,7 @@ Garante per la protezione dei dati personali  Piazza di Monte Citorio, 1210018
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Nt-RA-81s">
-                                <rect key="frame" x="128" y="557" width="120" height="30"/>
+                                <rect key="frame" x="127.5" y="557" width="120" height="30"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="Crea un account">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -477,7 +476,7 @@ Garante per la protezione dei dati personali  Piazza di Monte Citorio, 1210018
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yng-U4-idX">
-                                <rect key="frame" x="157" y="597" width="62" height="30"/>
+                                <rect key="frame" x="156.5" y="597" width="62" height="30"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="Accesso">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -521,7 +520,7 @@ Garante per la protezione dei dati personali  Piazza di Monte Citorio, 1210018
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Cellulare" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9Gl-jh-cBU" userLabel="Phone" customClass="PhoneNumberTextField" customModule="PhoneNumberKit">
-                                <rect key="frame" x="30" y="235.5" width="305.5" height="50"/>
+                                <rect key="frame" x="30" y="236" width="305" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="9Z7-ZR-u1t"/>
                                 </constraints>
@@ -530,7 +529,7 @@ Garante per la protezione dei dati personali  Piazza di Monte Citorio, 1210018
                                 <textInputTraits key="textInputTraits" returnKeyType="next" enablesReturnKeyAutomatically="YES"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Nome" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="d9c-X1-RgZ">
-                                <rect key="frame" x="30" y="165.5" width="305" height="50"/>
+                                <rect key="frame" x="30" y="166" width="305" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="j5I-ZJ-hDn"/>
                                 </constraints>
@@ -545,7 +544,7 @@ Garante per la protezione dei dati personali  Piazza di Monte Citorio, 1210018
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5Fi-O4-1WT">
-                                <rect key="frame" x="30" y="235.5" width="305" height="50"/>
+                                <rect key="frame" x="30" y="236" width="305" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="36K-8o-COz"/>
                                 </constraints>
@@ -554,7 +553,7 @@ Garante per la protezione dei dati personali  Piazza di Monte Citorio, 1210018
                                 <textInputTraits key="textInputTraits" returnKeyType="next" enablesReturnKeyAutomatically="YES"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="AN9-ZN-kJM">
-                                <rect key="frame" x="30" y="305.5" width="305" height="50"/>
+                                <rect key="frame" x="30" y="306" width="305" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="1Cp-aq-qOn"/>
                                 </constraints>
@@ -563,7 +562,7 @@ Garante per la protezione dei dati personali  Piazza di Monte Citorio, 1210018
                                 <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES" secureTextEntry="YES" textContentType="password"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jGk-ha-Iz9">
-                                <rect key="frame" x="87.5" y="395.5" width="200" height="32"/>
+                                <rect key="frame" x="87.5" y="396" width="200" height="32"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="200" id="Id2-3l-pah"/>
                                     <constraint firstAttribute="height" constant="32" id="k8y-aj-kQS"/>
@@ -577,7 +576,7 @@ Garante per la protezione dei dati personali  Piazza di Monte Citorio, 1210018
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7ET-Az-9Uf" customClass="TransitionButton" customModule="TransitionButton">
-                                <rect key="frame" x="40" y="447.5" width="295" height="50"/>
+                                <rect key="frame" x="40" y="448" width="295" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="Qxs-D4-NeM"/>
                                 </constraints>
@@ -747,13 +746,13 @@ Garante per la protezione dei dati personali  Piazza di Monte Citorio, 1210018
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView autoresizesSubviews="NO" opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="iWT-13-vJC">
-                                <rect key="frame" x="30" y="273" width="116" height="185"/>
+                                <rect key="frame" x="30" y="272" width="116" height="187"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4d3-Dw-l8I">
-                                        <rect key="frame" x="0.0" y="0.0" width="116" height="21"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="116" height="21.5"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ndu-I1-jYE" customClass="BEMCheckBox">
-                                                <rect key="frame" x="0.0" y="0.0" width="40" height="21"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="40" height="21.5"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="40" id="2g7-ZW-4SQ"/>
@@ -775,7 +774,7 @@ Garante per la protezione dei dati personali  Piazza di Monte Citorio, 1210018
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dall’Italia" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o4q-6z-0JD">
-                                                <rect key="frame" x="40" y="0.0" width="76" height="21"/>
+                                                <rect key="frame" x="40" y="0.0" width="76" height="21.5"/>
                                                 <fontDescription key="fontDescription" name="DINAlternate-Bold" family="DIN Alternate" pointSize="17"/>
                                                 <color key="textColor" red="0.086274509799999996" green="0.098039215690000001" blue="0.1843137255" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -783,10 +782,10 @@ Garante per la protezione dei dati personali  Piazza di Monte Citorio, 1210018
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kac-VV-yNE">
-                                        <rect key="frame" x="0.0" y="41" width="116" height="21"/>
+                                        <rect key="frame" x="0.0" y="41.5" width="116" height="21.5"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="a0d-AJ-ckH" customClass="BEMCheckBox">
-                                                <rect key="frame" x="0.0" y="0.0" width="40" height="21"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="40" height="21.5"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="a0d-AJ-ckH" secondAttribute="height" multiplier="15:8" id="4gh-UF-pxl"/>
@@ -808,7 +807,7 @@ Garante per la protezione dei dati personali  Piazza di Monte Citorio, 1210018
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Spettacolo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gNH-mp-Wgf">
-                                                <rect key="frame" x="40" y="0.0" width="76" height="21"/>
+                                                <rect key="frame" x="40" y="0.0" width="76" height="21.5"/>
                                                 <fontDescription key="fontDescription" name="DINAlternate-Bold" family="DIN Alternate" pointSize="17"/>
                                                 <color key="textColor" red="0.086274509799999996" green="0.098039215690000001" blue="0.1843137255" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -816,7 +815,7 @@ Garante per la protezione dei dati personali  Piazza di Monte Citorio, 1210018
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cW2-ar-0FT">
-                                        <rect key="frame" x="0.0" y="82" width="116" height="21"/>
+                                        <rect key="frame" x="0.0" y="83" width="116" height="21"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nn3-oM-hXe" customClass="BEMCheckBox">
                                                 <rect key="frame" x="0.0" y="0.0" width="40" height="21"/>
@@ -849,10 +848,10 @@ Garante per la protezione dei dati personali  Piazza di Monte Citorio, 1210018
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8B9-fc-cXw">
-                                        <rect key="frame" x="0.0" y="123" width="116" height="21"/>
+                                        <rect key="frame" x="0.0" y="124" width="116" height="21.5"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qaS-Ge-o7M" customClass="BEMCheckBox">
-                                                <rect key="frame" x="0.0" y="0.0" width="40" height="21"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="40" height="21.5"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="qaS-Ge-o7M" secondAttribute="height" multiplier="15:8" id="GhB-0T-h1g"/>
@@ -874,7 +873,7 @@ Garante per la protezione dei dati personali  Piazza di Monte Citorio, 1210018
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dal Mondo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Whd-dT-xo3">
-                                                <rect key="frame" x="40" y="0.0" width="76" height="21"/>
+                                                <rect key="frame" x="40" y="0.0" width="76" height="21.5"/>
                                                 <fontDescription key="fontDescription" name="DINAlternate-Bold" family="DIN Alternate" pointSize="17"/>
                                                 <color key="textColor" red="0.086274509799999996" green="0.098039215690000001" blue="0.1843137255" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -882,10 +881,10 @@ Garante per la protezione dei dati personali  Piazza di Monte Citorio, 1210018
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zmo-rL-mE4">
-                                        <rect key="frame" x="0.0" y="164" width="116" height="21"/>
+                                        <rect key="frame" x="0.0" y="165.5" width="116" height="21.5"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bb9-B0-LcE" customClass="BEMCheckBox">
-                                                <rect key="frame" x="0.0" y="0.0" width="40" height="21"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="40" height="21.5"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="Bb9-B0-LcE" secondAttribute="height" multiplier="15:8" id="663-KF-rio"/>
@@ -907,7 +906,7 @@ Garante per la protezione dei dati personali  Piazza di Monte Citorio, 1210018
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cultura" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zq2-UO-xFR">
-                                                <rect key="frame" x="40" y="0.0" width="76" height="21"/>
+                                                <rect key="frame" x="40" y="0.0" width="76" height="21.5"/>
                                                 <fontDescription key="fontDescription" name="DINAlternate-Bold" family="DIN Alternate" pointSize="17"/>
                                                 <color key="textColor" red="0.086274509799999996" green="0.098039215690000001" blue="0.1843137255" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -1097,7 +1096,7 @@ Garante per la protezione dei dati personali  Piazza di Monte Citorio, 1210018
                                             </subviews>
                                         </stackView>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eXX-Z5-b28">
-                                            <rect key="frame" x="341" y="37" width="24" height="24"/>
+                                            <rect key="frame" x="341" y="38" width="24" height="24"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="24" id="UwU-ta-NYF"/>
                                                 <constraint firstAttribute="width" secondItem="eXX-Z5-b28" secondAttribute="height" multiplier="1:1" id="Uxg-i0-MfQ"/>
@@ -1143,13 +1142,13 @@ Garante per la protezione dei dati personali  Piazza di Monte Citorio, 1210018
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="BLW-Qi-DMD">
-                                <rect key="frame" x="62" y="192" width="252.5" height="380"/>
+                                <rect key="frame" x="61.5" y="192" width="252.5" height="380"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="CeA-fL-Xgu">
                                         <rect key="frame" x="0.0" y="0.0" width="252.5" height="100"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tLG-HG-Ku9">
-                                                <rect key="frame" x="113" y="0.0" width="27" height="72"/>
+                                                <rect key="frame" x="112.5" y="0.0" width="27" height="72"/>
                                                 <fontDescription key="fontDescription" name="DINCondensed-Bold" family="DIN Condensed" pointSize="72"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
@@ -1166,13 +1165,13 @@ Garante per la protezione dei dati personali  Piazza di Monte Citorio, 1210018
                                         <rect key="frame" x="0.0" y="140" width="252.5" height="100"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bxz-GC-Trt">
-                                                <rect key="frame" x="113" y="0.0" width="27" height="72"/>
+                                                <rect key="frame" x="112.5" y="0.0" width="27" height="72"/>
                                                 <fontDescription key="fontDescription" name="DINCondensed-Bold" family="DIN Condensed" pointSize="72"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Articoli letti in totale" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mzn-dQ-I1V">
-                                                <rect key="frame" x="40" y="72" width="173" height="28"/>
+                                                <rect key="frame" x="39.5" y="72" width="173" height="28"/>
                                                 <fontDescription key="fontDescription" name="DINCondensed-Bold" family="DIN Condensed" pointSize="28"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
@@ -1183,13 +1182,13 @@ Garante per la protezione dei dati personali  Piazza di Monte Citorio, 1210018
                                         <rect key="frame" x="0.0" y="280" width="252.5" height="100"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Fc-mC-TlH">
-                                                <rect key="frame" x="113" y="0.0" width="27" height="72"/>
+                                                <rect key="frame" x="112.5" y="0.0" width="27" height="72"/>
                                                 <fontDescription key="fontDescription" name="DINCondensed-Bold" family="DIN Condensed" pointSize="72"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Minuti spesi leggendo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MMq-1j-qD4">
-                                                <rect key="frame" x="31.5" y="72" width="190" height="28"/>
+                                                <rect key="frame" x="31" y="72" width="190" height="28"/>
                                                 <fontDescription key="fontDescription" name="DINCondensed-Bold" family="DIN Condensed" pointSize="28"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
@@ -1283,8 +1282,8 @@ Garante per la protezione dei dati personali  Piazza di Monte Citorio, 1210018
         </scene>
     </scenes>
     <resources>
-        <image name="read" width="33" height="33"/>
-        <image name="read_selected" width="16" height="16"/>
-        <image name="safari" width="32" height="32"/>
+        <image name="read" width="75" height="75"/>
+        <image name="read_selected" width="37.5" height="37.5"/>
+        <image name="safari" width="72" height="72"/>
     </resources>
 </document>

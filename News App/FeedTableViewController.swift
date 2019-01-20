@@ -37,6 +37,8 @@ class FeedTableViewController: UITableViewController, SFSafariViewControllerDele
 
         locationManager.delegate = self
         
+        updateDeviceToken()
+        
         NotificationCenter.default.addObserver(self, selector: #selector(logHours(notification:)), name: Notification.Name.init("logHours"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(showSaved), name: Notification.Name.init("showSaved"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(showProgress), name: Notification.Name.init("showProgress"), object: nil)
@@ -68,6 +70,18 @@ class FeedTableViewController: UITableViewController, SFSafariViewControllerDele
                 self.markVisibleArticles()
             }
         }
+    }
+    
+    func updateDeviceToken() {
+//        InstanceID.instanceID().instanceID { (result, error) in
+//            guard error == nil, let result = result else { return }
+//            print("here ...", result.token)
+//
+//        } either of these work
+        
+        guard let deviceToken = Messaging.messaging().fcmToken else { return }
+        print("here", deviceToken)
+        self.db.collection("users").document(self.userID).updateData(["deviceToken" : deviceToken])
     }
     
     override func viewDidAppear(_ animated: Bool) {

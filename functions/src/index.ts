@@ -5,6 +5,7 @@
 import * as admin from 'firebase-admin';
 import * as functions from 'firebase-functions';
 import * as Parser from 'rss-parser';
+import { firestoreExport } from 'node-firestore-import-export';
 
 // MARK: Init
 
@@ -328,6 +329,24 @@ exports.saveArticle = functions.https.onRequest((req, res) => {
 });
 
 // GET
+
+exports.exportDb = functions.https.onRequest((req, res) => {
+	const pwd: string = req.get('Authentication');
+
+	if (pwd !== functions.config().dossier.export_db_pwd) {
+		return res.send(401);
+	}
+
+	return db.getCollections().then((collections: FirebaseFirestore.CollectionReference[]) => {
+		return Promise.all(collections.map(firestoreExport)).then((data: any[]) => {
+			return res.send(JSON.stringify({'articles' : data[0], 'users' : data[1]}));
+		}).catch(error => {
+			return res.send(error);
+		});
+	}).catch(error => {
+		return res.send(error);
+	});
+});
 
 exports.sendArticlesToUser = functions.https.onRequest((req, res) => {
 	const token: string = req.get('Authorization').split('Bearer ')[1];

@@ -5,6 +5,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const admin = require("firebase-admin");
 const functions = require("firebase-functions");
 const Parser = require("rss-parser");
+const node_firestore_import_export_1 = require("node-firestore-import-export");
 // MARK: Init
 admin.initializeApp();
 // MARK: Types
@@ -263,6 +264,21 @@ exports.saveArticle = functions.https.onRequest((req, res) => {
     });
 });
 // GET
+exports.exportDb = functions.https.onRequest((req, res) => {
+    const pwd = req.get('Authentication');
+    if (pwd !== functions.config().dossier.export_db_pwd) {
+        return res.send(401);
+    }
+    return db.getCollections().then((collections) => {
+        return Promise.all(collections.map(node_firestore_import_export_1.firestoreExport)).then((data) => {
+            return res.send(JSON.stringify({ 'articles': data[0], 'users': data[1] }));
+        }).catch(error => {
+            return res.send(error);
+        });
+    }).catch(error => {
+        return res.send(error);
+    });
+});
 exports.sendArticlesToUser = functions.https.onRequest((req, res) => {
     const token = req.get('Authorization').split('Bearer ')[1];
     const distribution = req.query.distribution;

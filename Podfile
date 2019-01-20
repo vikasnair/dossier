@@ -12,6 +12,7 @@ target 'News App' do
   pod 'Firebase/Core'
   pod 'Firebase/Auth'
   pod 'Firebase/Firestore'
+  pod 'Firebase/Messaging'
   pod 'PhoneNumberKit'
   pod 'IQKeyboardManagerSwift'
   pod 'TransitionButton'
